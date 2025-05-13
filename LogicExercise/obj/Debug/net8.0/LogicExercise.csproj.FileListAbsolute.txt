@@ -1,0 +1,15 @@
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\LogicExercise\bin\Debug\net8.0\LogicExercise.exe
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\LogicExercise\bin\Debug\net8.0\LogicExercise.deps.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\LogicExercise\bin\Debug\net8.0\LogicExercise.runtimeconfig.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\LogicExercise\bin\Debug\net8.0\LogicExercise.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\LogicExercise\bin\Debug\net8.0\LogicExercise.pdb
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\LogicExercise\obj\Debug\net8.0\LogicExercise.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\LogicExercise\obj\Debug\net8.0\LogicExercise.AssemblyInfoInputs.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\LogicExercise\obj\Debug\net8.0\LogicExercise.AssemblyInfo.cs
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\LogicExercise\obj\Debug\net8.0\LogicExercise.csproj.CoreCompileInputs.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\LogicExercise\obj\Debug\net8.0\LogicExercise.sourcelink.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\LogicExercise\obj\Debug\net8.0\LogicExercise.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\LogicExercise\obj\Debug\net8.0\refint\LogicExercise.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\LogicExercise\obj\Debug\net8.0\LogicExercise.pdb
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\LogicExercise\obj\Debug\net8.0\LogicExercise.genruntimeconfig.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\LogicExercise\obj\Debug\net8.0\ref\LogicExercise.dll
