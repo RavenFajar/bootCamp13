@@ -52,4 +52,43 @@ userName.Name();
 userName.Speak();
 userName.Move();
 
+Point p1 = new Point();
+p1.X = 5;
+Console.WriteLine(p1.X);  // Output: 5
+
+Point p2 = p1;  // Copy of p1
+p2.X = 10;
+
+Console.WriteLine(p1.X);  // Output: 5
+Console.WriteLine(p2.X);  // Output: 10
+
+bool isRaining = true;
+bool isSunny = !isRaining;
+
+if (isSunny)
+{
+    Console.WriteLine($"No umbrella needed. {name}");
+}
+else
+{
+    Console.WriteLine(@"Take an umbrella!");
+}
+
+Console.WriteLine($"The weather is {(isSunny ? "sunny" : "not sunny")}");  
+
+int x = 8;
+Foo(ref x);  // Passes x by reference
+Console.WriteLine(x);  // Output: 9
+
+static void Foo(ref int p)
+{
+    p = p + 1;  // Modifies p, which also modifies x
+    Console.WriteLine(p);  // Output: 9
+}
+
+
+public struct Point
+{
+    public int X, Y;
+}
 
