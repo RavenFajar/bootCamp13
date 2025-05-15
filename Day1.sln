@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicExercise", "LogicExerc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day2LanguageBasics", "Day2LanguageBasics\Day2LanguageBasics.csproj", "{EA32E536-BF3A-4171-8C90-C8D852D19BD1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day3", "Day3\Day3.csproj", "{43100DFC-E181-478E-9E84-29ACADD581E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day3Generic", "Day3Generic\Day3Generic.csproj", "{F8F6B4E7-E0D9-4998-BB03-760C70475EDB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +46,14 @@ Global
 		{EA32E536-BF3A-4171-8C90-C8D852D19BD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA32E536-BF3A-4171-8C90-C8D852D19BD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA32E536-BF3A-4171-8C90-C8D852D19BD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43100DFC-E181-478E-9E84-29ACADD581E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43100DFC-E181-478E-9E84-29ACADD581E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43100DFC-E181-478E-9E84-29ACADD581E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43100DFC-E181-478E-9E84-29ACADD581E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8F6B4E7-E0D9-4998-BB03-760C70475EDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8F6B4E7-E0D9-4998-BB03-760C70475EDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8F6B4E7-E0D9-4998-BB03-760C70475EDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8F6B4E7-E0D9-4998-BB03-760C70475EDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5E27B36C-1410-4D3C-98BA-FDF789D834CB} = {9D7FEA04-4B46-405F-8BDC-ED6358704415}

@@ -1,0 +1,15 @@
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day3Generic\bin\Debug\net8.0\Day3Generic.exe
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day3Generic\bin\Debug\net8.0\Day3Generic.deps.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day3Generic\bin\Debug\net8.0\Day3Generic.runtimeconfig.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day3Generic\bin\Debug\net8.0\Day3Generic.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day3Generic\bin\Debug\net8.0\Day3Generic.pdb
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day3Generic\obj\Debug\net8.0\Day3Generic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day3Generic\obj\Debug\net8.0\Day3Generic.AssemblyInfoInputs.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day3Generic\obj\Debug\net8.0\Day3Generic.AssemblyInfo.cs
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day3Generic\obj\Debug\net8.0\Day3Generic.csproj.CoreCompileInputs.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day3Generic\obj\Debug\net8.0\Day3Generic.sourcelink.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day3Generic\obj\Debug\net8.0\Day3Generic.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day3Generic\obj\Debug\net8.0\refint\Day3Generic.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day3Generic\obj\Debug\net8.0\Day3Generic.pdb
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day3Generic\obj\Debug\net8.0\Day3Generic.genruntimeconfig.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day3Generic\obj\Debug\net8.0\ref\Day3Generic.dll
