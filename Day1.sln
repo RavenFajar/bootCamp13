@@ -9,8 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Day1", "Day1", "{9D7FEA04-4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LogicExercise", "LogicExercise", "{FA0D474C-DD0C-4CD8-AA59-E1B202225CAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day1-LogicExercise", "Day1\LogicExercise\Day1-LogicExercise\Day1-LogicExercise.csproj", "{90FB86A4-741C-4908-A666-E60546D54E7A}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LogicExercise", "LogicExercise", "{1EB1B7B2-C51F-47C8-A625-1EF8DE94B3C3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicExercise", "LogicExercise\LogicExercise.csproj", "{F89644BD-2FDB-4756-A1A6-854EB4BE8F0E}"
@@ -20,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day3", "Day3\Day3.csproj", "{43100DFC-E181-478E-9E84-29ACADD581E0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day3Generic", "Day3Generic\Day3Generic.csproj", "{F8F6B4E7-E0D9-4998-BB03-760C70475EDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectDay3", "ProjectDay3\ProjectDay3.csproj", "{57E3B2EE-607D-4586-AB11-BD35B97E9303}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,6 +54,10 @@ Global
 		{F8F6B4E7-E0D9-4998-BB03-760C70475EDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8F6B4E7-E0D9-4998-BB03-760C70475EDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8F6B4E7-E0D9-4998-BB03-760C70475EDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57E3B2EE-607D-4586-AB11-BD35B97E9303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57E3B2EE-607D-4586-AB11-BD35B97E9303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57E3B2EE-607D-4586-AB11-BD35B97E9303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57E3B2EE-607D-4586-AB11-BD35B97E9303}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5E27B36C-1410-4D3C-98BA-FDF789D834CB} = {9D7FEA04-4B46-405F-8BDC-ED6358704415}
