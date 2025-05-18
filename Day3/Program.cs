@@ -41,7 +41,7 @@ Point p = new Point();
 Console.WriteLine(p.GetType().FullName);  // Output: Point
 Console.WriteLine(typeof(Point).Name); 
 
-Car mercy = new Car("one");
+Car mercy = new Car("one","sport");
 
 Console.WriteLine(mercy.Make);
 Console.WriteLine(mercy.Model);
@@ -89,7 +89,6 @@ public class Car
     public Car(string make) : this(make, "Unknown")
     {
     }
-
     public Car(string make, string model)
     {
         Make = make;
