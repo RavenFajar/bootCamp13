@@ -1,0 +1,15 @@
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day5FuncAndAction\bin\Debug\net8.0\Day5FuncAndAction.exe
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day5FuncAndAction\bin\Debug\net8.0\Day5FuncAndAction.deps.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day5FuncAndAction\bin\Debug\net8.0\Day5FuncAndAction.runtimeconfig.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day5FuncAndAction\bin\Debug\net8.0\Day5FuncAndAction.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day5FuncAndAction\bin\Debug\net8.0\Day5FuncAndAction.pdb
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day5FuncAndAction\obj\Debug\net8.0\Day5FuncAndAction.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day5FuncAndAction\obj\Debug\net8.0\Day5FuncAndAction.AssemblyInfoInputs.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day5FuncAndAction\obj\Debug\net8.0\Day5FuncAndAction.AssemblyInfo.cs
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day5FuncAndAction\obj\Debug\net8.0\Day5FuncAndAction.csproj.CoreCompileInputs.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day5FuncAndAction\obj\Debug\net8.0\Day5FuncAndAction.sourcelink.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day5FuncAndAction\obj\Debug\net8.0\Day5FuncAndAction.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day5FuncAndAction\obj\Debug\net8.0\refint\Day5FuncAndAction.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day5FuncAndAction\obj\Debug\net8.0\Day5FuncAndAction.pdb
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day5FuncAndAction\obj\Debug\net8.0\Day5FuncAndAction.genruntimeconfig.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day5FuncAndAction\obj\Debug\net8.0\ref\Day5FuncAndAction.dll

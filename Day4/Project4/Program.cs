@@ -1,45 +1,17 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
-class NamaKelas
-{
-    // isi kelas
-}
+﻿// Define the delegate type
+delegate int Transformer(int x);
 
-class Octopus
-{
-    public string Name;
-    public static int Legs = 8;        // statis, dipakai bersama semua objek
-    public readonly int Age = 5;       // hanya bisa di-set di awal
-}
-public class Test
-{
-    public const double PI = 3.14159;
-}
-public class MathOperations
-{
-    public int Add(int a, int b) => a + b;  // metode singkat
-}
-public class Car
-{
-    public string Make;
-    public string Model;
+// A method that matches the delegate signature
+int Square(int x) => x * x;
+int Rectangle(int x) => x * x * x;
 
-    public Car(string make, string model)
-    {
-        Make = make;
-        Model = model;
-    }
-}
-public class Stock
-{
-    private decimal currentPrice;
-    public decimal CurrentPrice
-    {
-        get { return currentPrice; }
-        set { currentPrice = value; }
-    }
-    // public decimal CurrentPrice { get; set; }
-
-}
+// Assign the method to a delegate variable
+Transformer t = Square;
+Transformer t = Rectangle;
 
 
+// Invoke the delegate
+int result = t(3);  // result will be 9
+
+Console.WriteLine(result);  // Outputs: 9
+Console.WriteLine(result);

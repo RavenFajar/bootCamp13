@@ -1,0 +1,15 @@
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\EnumeratorAndIterators\bin\Debug\net8.0\EnumeratorAndIterators.exe
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\EnumeratorAndIterators\bin\Debug\net8.0\EnumeratorAndIterators.deps.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\EnumeratorAndIterators\bin\Debug\net8.0\EnumeratorAndIterators.runtimeconfig.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\EnumeratorAndIterators\bin\Debug\net8.0\EnumeratorAndIterators.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\EnumeratorAndIterators\bin\Debug\net8.0\EnumeratorAndIterators.pdb
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\EnumeratorAndIterators\obj\Debug\net8.0\EnumeratorAndIterators.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\EnumeratorAndIterators\obj\Debug\net8.0\EnumeratorAndIterators.AssemblyInfoInputs.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\EnumeratorAndIterators\obj\Debug\net8.0\EnumeratorAndIterators.AssemblyInfo.cs
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\EnumeratorAndIterators\obj\Debug\net8.0\EnumeratorAndIterators.csproj.CoreCompileInputs.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\EnumeratorAndIterators\obj\Debug\net8.0\EnumeratorAndIterators.sourcelink.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\EnumeratorAndIterators\obj\Debug\net8.0\EnumeratorAndIterators.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\EnumeratorAndIterators\obj\Debug\net8.0\refint\EnumeratorAndIterators.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\EnumeratorAndIterators\obj\Debug\net8.0\EnumeratorAndIterators.pdb
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\EnumeratorAndIterators\obj\Debug\net8.0\EnumeratorAndIterators.genruntimeconfig.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\EnumeratorAndIterators\obj\Debug\net8.0\ref\EnumeratorAndIterators.dll
