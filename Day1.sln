@@ -19,8 +19,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day3Generic", "Day3\Day3Gen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectDay3", "Day3\ProjectDay3\ProjectDay3.csproj", "{57E3B2EE-607D-4586-AB11-BD35B97E9303}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day5Delegate", "Day5\Day5Delegate\Day5Delegate.csproj", "{46E2021A-1280-441A-8F17-D605F10052C9}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day5", "Day5\Day5.csproj", "{2D19722D-B736-477F-96A9-F19CA24969C4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day5FuncAndAction", "Day5FuncAndAction\Day5FuncAndAction.csproj", "{6EE0B643-FABF-4C33-AFC1-C89396BB1D0E}"

@@ -16,6 +16,11 @@
 
 Display1 oneOf = new Display1();
 oneOf.Display(null);
+object a = "ini";
+int? b = a as int?;
+Console.WriteLine($"{b}");
+Console.WriteLine($"break");
+
 
 public class Display1
 {
@@ -28,7 +33,7 @@ public class Display1
         catch (ArgumentNullException ex) when (name == null)
         {
 
-            Console.WriteLine(ex);
+            // Console.WriteLine(ex);
             Console.WriteLine("ini masuk ke block exception pertama");
         }
         catch (Exception ex)
@@ -37,9 +42,9 @@ public class Display1
             Console.WriteLine("ini exception biasa");
         }
         finally
-        { 
+        {
             Console.WriteLine("Jalan final");
-            
+
         }
     }
 }

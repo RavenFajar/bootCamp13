@@ -1,4 +1,8 @@
 ﻿
+foreach (char c in "beeeerrr")
+{
+    Console.WriteLine(c);
+}
 string testingName = "Raven";
 var testing = testingName.GetEnumerator();
 Console.WriteLine($"{testing}");
