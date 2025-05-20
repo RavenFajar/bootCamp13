@@ -1,5 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-
+﻿
 string testingName = "Raven";
 var testing = testingName.GetEnumerator();
 Console.WriteLine($"{testing}");
@@ -55,5 +54,6 @@ IEnumerable<int> Fibs(int fibCount)
 
 foreach (int fib in Fibs(6))
 {
-    Console.Write(fib + " ");
+    Console.WriteLine(fib + " ");
+    Console.ReadKey();
 }

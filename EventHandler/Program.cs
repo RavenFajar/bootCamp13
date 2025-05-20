@@ -1,4 +1,6 @@
 ﻿// Define a delegate that matches the event signature
+using System.ComponentModel;
+
 public delegate void PriceChangedHandler(decimal oldPrice, decimal newPrice);
 
 public class Broadcaster
@@ -11,6 +13,8 @@ public class Broadcaster
     {
         decimal oldPrice = 100m; // Example old price
         PriceChanged?.Invoke(oldPrice, newPrice); // Fire the event
+        Console.WriteLine($"dari void changeprice {oldPrice} ke {newPrice}");
+        
     }
 }
 
@@ -30,7 +34,7 @@ class Program
         Subscriber subscriber = new Subscriber();
 
         // Subscribe to the event
-        broadcaster.PriceChanged += subscriber.OnPriceChanged;
+        // broadcaster.PriceChanged += subscriber.OnPriceChanged;
 
         // Trigger the event
         broadcaster.ChangePrice(120m);
