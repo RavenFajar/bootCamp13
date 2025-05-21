@@ -19,19 +19,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day3Generic", "Day3\Day3Gen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectDay3", "Day3\ProjectDay3\ProjectDay3.csproj", "{57E3B2EE-607D-4586-AB11-BD35B97E9303}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day5", "Day5\Day5.csproj", "{2D19722D-B736-477F-96A9-F19CA24969C4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day5", "AllDay5\Day5\Day5.csproj", "{2D19722D-B736-477F-96A9-F19CA24969C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day5FuncAndAction", "Day5FuncAndAction\Day5FuncAndAction.csproj", "{6EE0B643-FABF-4C33-AFC1-C89396BB1D0E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day5FuncAndAction", "AllDay5\Day5FuncAndAction\Day5FuncAndAction.csproj", "{6EE0B643-FABF-4C33-AFC1-C89396BB1D0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHandler", "EventHandler\EventHandler.csproj", "{38BB1DCE-5A51-4D75-96A7-A86A4121E652}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHandler", "AllDay5\EventHandler\EventHandler.csproj", "{38BB1DCE-5A51-4D75-96A7-A86A4121E652}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumeratorAndIterators", "EnumeratorAndIterators\EnumeratorAndIterators.csproj", "{1C3A7C2A-310A-4E05-8B90-4A060103EE4B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumeratorAndIterators", "AllDay5\EnumeratorAndIterators\EnumeratorAndIterators.csproj", "{1C3A7C2A-310A-4E05-8B90-4A060103EE4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryCatch", "TryCatch\TryCatch.csproj", "{8B0C9EF4-E9B3-40FC-A372-4FEE0B551310}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryCatch", "AllDay5\TryCatch\TryCatch.csproj", "{8B0C9EF4-E9B3-40FC-A372-4FEE0B551310}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperatorOverloading", "OperatorOverloading\OperatorOverloading.csproj", "{F0EE6666-A4DE-4E0A-90E0-E49402791B93}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperatorOverloading", "AllDay5\OperatorOverloading\OperatorOverloading.csproj", "{F0EE6666-A4DE-4E0A-90E0-E49402791B93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2ndLogic", "2ndLogic\2ndLogic.csproj", "{58E33DA3-2ED6-4153-BACC-3D700842DC39}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2ndLogic", "Day6\2ndLogic\2ndLogic.csproj", "{58E33DA3-2ED6-4153-BACC-3D700842DC39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

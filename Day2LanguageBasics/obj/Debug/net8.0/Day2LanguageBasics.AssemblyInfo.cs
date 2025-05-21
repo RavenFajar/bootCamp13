@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Day2LanguageBasics")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d05499c17ffbcb2fc9388aedab9358777a19a74b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a519c543bde2027d62d8c390f6db3b5588f8f5c7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Day2LanguageBasics")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Day2LanguageBasics")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
