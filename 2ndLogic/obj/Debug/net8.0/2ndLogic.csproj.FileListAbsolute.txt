@@ -1,0 +1,15 @@
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\2ndLogic\bin\Debug\net8.0\2ndLogic.exe
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\2ndLogic\bin\Debug\net8.0\2ndLogic.deps.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\2ndLogic\bin\Debug\net8.0\2ndLogic.runtimeconfig.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\2ndLogic\bin\Debug\net8.0\2ndLogic.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\2ndLogic\bin\Debug\net8.0\2ndLogic.pdb
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\2ndLogic\obj\Debug\net8.0\2ndLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\2ndLogic\obj\Debug\net8.0\2ndLogic.AssemblyInfoInputs.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\2ndLogic\obj\Debug\net8.0\2ndLogic.AssemblyInfo.cs
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\2ndLogic\obj\Debug\net8.0\2ndLogic.csproj.CoreCompileInputs.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\2ndLogic\obj\Debug\net8.0\2ndLogic.sourcelink.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\2ndLogic\obj\Debug\net8.0\2ndLogic.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\2ndLogic\obj\Debug\net8.0\refint\2ndLogic.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\2ndLogic\obj\Debug\net8.0\2ndLogic.pdb
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\2ndLogic\obj\Debug\net8.0\2ndLogic.genruntimeconfig.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\2ndLogic\obj\Debug\net8.0\ref\2ndLogic.dll
