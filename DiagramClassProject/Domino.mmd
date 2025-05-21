@@ -1,0 +1,42 @@
+classDiagram
+
+    Player --> "many" Card : Contains
+    Player ..> GameController
+    CardOnGame..> GameController
+    DrawCard ..> GameController
+   class Card{
+    +int idCard
+    +leftValue
+    +rightValue
+    
+   }
+    class Player{
+        +int id : readonly
+        +string name
+        +int cardRemaining
+        +Player(int id, string name)
+    }
+    class PlayerBehavior{
+        +CardLeftValue()
+        +CardRightValue()
+    }
+    class PlayerDecision{
+        +PlayerPlay()
+        +PlayerSkip()
+        +TakeDrawCard()
+    }
+    class GameController{
+        +int idPlayer
+        GameStart()
+        PlayerCurrent()
+        WinnerDecision()
+        GetDrawCard()
+    }
+    class CardOnGame{
+        +int CardPLayed
+        +leftEndValue
+        +RightEndValue
+    }
+    class DrawCard{
+        +ShuffleCard()
+    }
