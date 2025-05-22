@@ -1,70 +1,83 @@
 classDiagram
-
-class Game {
-    - IPlayer player1
-    - IPlayer player2
-    - List~DominoTile~ board
-    - List~DominoTile~ deck
-    - TurnManager turnManager
-    + startGame()
-    + playTurn()
-    + isGameOver() bool
-    + getWinner() string
-    + drawTile(IPlayer)
-    + canPlayerPlay(IPlayer) bool
-}
-
-class IPlayer {
+class IPlayer{
     <<interface>>
-    + string name
-    + List~DominoTile~ hand
-    + DominoTile chooseTile(List~DominoTile~ board)
-    + bool canPlay(List~DominoTile~ board)
-    + bool hasNoCards() 
-    + int getRemainingPoints()
-    + void addTileToHand(DominoTile tile)
+    +int id
+    +String name
 }
-
-class HumanPlayer {
-    + string name
-    + List~DominoTile~ hand
-    + DominoTile chooseTile(List~DominoTile~ board)
-    + bool canPlay(List~DominoTile~ board)
-    + bool hasNoCards() 
-    + int getRemainingPoints()
-    + void addTileToHand(DominoTile tile)
+class Player{
+    +int id
+    +String name
+    +Player(int id, string name)
 }
-
-class AIPlayer {
-    + string name
-    + List~DominoTile~ hand
-    + DominoTile chooseTile(List~DominoTile~ board)
-    + bool canPlay(List~DominoTile~ board)
-    + bool hasNoCards() 
-    + int getRemainingPoints()
-    + void addTileToHand(DominoTile tile)
+class ICard{
+    <<interface>>
+    +int id
+    +int firstFaceValue
+    +int secondFaceValue 
 }
-
-class DominoTile {
-    + int left
-    + int right
-    + bool isPlayed
-    + bool matches(int number)
-    + int getPoints()
+class IDisplay {
+    +ShowBoard(List~Card~ board) : void
+    +ShowHand(List~Card~ hand) : void
 }
-
-class TurnManager {
-    - bool isPlayer1Turn
-    - Action~IPlayer~ onTurnExecute
-    + nextTurn(IPlayer player1, IPlayer player2)
-    + setOnTurnExecute(Action~IPlayer~ handler)
-    + getCurrentPlayer(IPlayer, IPlayer) IPlayer
-    + executeTurn(IPlayer)
+class IDeck{
+    <<interface>>
+    +Shuffle() : void
+    +DrawCard() : Card
 }
-
-Game --> TurnManager
-Game --> IPlayer : uses
-IPlayer <|.. HumanPlayer
-IPlayer <|.. AIPlayer
-IPlayer --> DominoTile
-Game --> DominoTile
+class IBoard{
+    <<interface>>
+    +UpdateBoard(Card card, IPlayer player) : void
+    +GetBoard() : List~Card~
+}
+class Deck{
+    -List~ICard~ cards
+    +Shuffle() : void
+    +DrawCard() : ICard
+}
+class Board{
+    -List~ICard~ playedCards
+    +UpdateBoard(ICard card, IPlayer player) : void
+    +GetBoard() : List~ICard~
+}
+class Card{
+    +int id
+    +int firstFaceValue
+    +int secondFaceValue   
+    +IsDouble() : bool
+}
+class GameController{
+    -IDeck deck
+    -IBoard board
+    -List~IPlayer~ players
+    -Dictionary~IPlayer, List_Card~ hand
+    -Dictionary~int, Card~ moveOptions
+    -IPlayer currentPlayer
+    -int maxPlayers
+    -Action onGameStart
+    -Action~IPlayer~ onPlayerTurn
+    -Action~bool~ onGameOver
+    +GetValue(Card card) : int
+    +GetScore(IPlayer player)
+    +StartGame(Action onGameStart)
+    +NextTurn(Action~IPlayer~ onPlayerTurn)
+    +PassTurn() : void
+    +ValidateMove(Func~bool~ isGameOver) : bool
+    +GetWinner() : IPlayer
+    +GetPlayableMoves(IPlayer player) : Dictionary~int, Card~
+    +ExecuteMove(int option) : bool
+    +SetupPlayers(int playerCount) : bool
+    +AssignPlayerNames() : void
+    +DetermineFirstPlayer() : IPlayer
+    +TurnOrder() : void
+    +CheckGameOver() : bool
+}
+IPlayer --o GameController : aggregation
+IDeck ..> GameController
+IBoard ..> GameController
+Deck --|> IDeck
+Board --|> IBoard
+Player --|> IPlayer
+ICard --o Deck : aggregation
+ICard <-- Board
+IDisplay o.. GameController
+ICard <|.. Card
