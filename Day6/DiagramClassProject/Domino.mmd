@@ -3,36 +3,44 @@ class IPlayer{
     <<interface>>
     +int id
     +String name
+    +int scores
+    +GetTotalValue() : int
 }
 class Player{
     +int id
     +String name
+    +int scores
+    +List~ICard~ hand
     +Player(int id, string name)
+    +GetTotalValue() : int
 }
 class ICard{
     <<interface>>
     +int id
     +int firstFaceValue
     +int secondFaceValue 
-}
-class IDisplay {
-    +ShowBoard(List~Card~ board) : void
-    +ShowHand(List~Card~ hand) : void
+    +IsDouble() : bool
+    +GetValue() : int
 }
 class IDeck{
     <<interface>>
     +Shuffle() : void
     +DrawCard() : Card
+    +isEmpty() : bool
 }
 class IBoard{
     <<interface>>
     +UpdateBoard(Card card, IPlayer player) : void
     +GetBoard() : List~Card~
+   
 }
 class Deck{
+    -bool emptyDeck
+    -GenerateCard() : void
     -List~ICard~ cards
     +Shuffle() : void
     +DrawCard() : ICard
+    +isEmpty() : bool
 }
 class Board{
     -List~ICard~ playedCards
@@ -43,7 +51,8 @@ class Card{
     +int id
     +int firstFaceValue
     +int secondFaceValue   
-    +IsDouble() : bool
+    +RandomizerCard() : void
+    +GetValue() : int
 }
 class GameController{
     -IDeck deck
@@ -56,28 +65,31 @@ class GameController{
     -Action onGameStart
     -Action~IPlayer~ onPlayerTurn
     -Action~bool~ onGameOver
-    +GetValue(Card card) : int
-    +GetScore(IPlayer player)
-    +StartGame(Action onGameStart)
-    +NextTurn(Action~IPlayer~ onPlayerTurn)
-    +PassTurn() : void
-    +ValidateMove(Func~bool~ isGameOver) : bool
-    +GetWinner() : IPlayer
-    +GetPlayableMoves(IPlayer player) : Dictionary~int, Card~
-    +ExecuteMove(int option) : bool
     +SetupPlayers(int playerCount) : bool
     +AssignPlayerNames() : void
     +DetermineFirstPlayer() : IPlayer
     +TurnOrder() : void
+    +GetPlayableMoves(IPlayer player) : Dictionary~int, Card~
+    +ExecuteMove(int option) : bool
+    +ValidateMove(Func~bool~ isGameOver) : bool
+    +NextTurn(Action~IPlayer~ onPlayerTurn)
+    +PassTurn() : void
+    +GetValue(Card card) : int
+    +GetScore(IPlayer player)
+    +SetScore(IPlayer player)
+    +StartGame(Action onGameStart)
+    +ShowBoard(List~Card~ board) : void
+    +ShowHand(List~Card~ hand) : void
+    +CalculateScore() : int
+    +GetWinner() : IPlayer
     +CheckGameOver() : bool
 }
 IPlayer --o GameController : aggregation
-IDeck ..> GameController
-IBoard ..> GameController
-Deck --|> IDeck
-Board --|> IBoard
-Player --|> IPlayer
-ICard --o Deck : aggregation
-ICard <-- Board
-IDisplay o.. GameController
-ICard <|.. Card
+GameController o-- IDeck
+GameController o-- IBoard
+Deck --|> IDeck : Inheritance
+Board --|> IBoard : Inheritance
+Player --|> IPlayer : Inheritance
+Deck o-- ICard
+ICard --o Board : aggregation
+ICard <|.. Card : Realization
