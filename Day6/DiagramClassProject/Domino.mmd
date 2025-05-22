@@ -17,8 +17,8 @@ class Player{
 class ICard{
     <<interface>>
     +int id
-    +int firstFaceValue
-    +int secondFaceValue 
+    +int rigthFaceValue
+    +int leftFaceValue 
     +IsDouble() : bool
     +GetValue() : int
 }
@@ -49,8 +49,8 @@ class Board{
 }
 class Card{
     +int id
-    +int firstFaceValue
-    +int secondFaceValue   
+    +int rigthFaceValue
+    +int leftFaceValue   
     +RandomizerCard() : void
     +GetValue() : int
 }
