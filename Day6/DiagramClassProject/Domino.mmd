@@ -85,7 +85,7 @@ class GameController{
     +CheckGameOver() : bool
 }
 IPlayer --o GameController : aggregation
-GameController o-- IDeck
+IDeck --o GameController
 GameController o-- IBoard
 Deck --|> IDeck : Inheritance
 Board --|> IBoard : Inheritance
