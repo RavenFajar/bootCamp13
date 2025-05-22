@@ -1,42 +1,70 @@
 classDiagram
 
-    Player --> "many" Card : Contains
-    Player ..> GameController
-    CardOnGame..> GameController
-    DrawCard ..> GameController
-   class Card{
-    +int idCard
-    +leftValue
-    +rightValue
-    
-   }
-    class Player{
-        +int id : readonly
-        +string name
-        +int cardRemaining
-        +Player(int id, string name)
-    }
-    class PlayerBehavior{
-        +CardLeftValue()
-        +CardRightValue()
-    }
-    class PlayerDecision{
-        +PlayerPlay()
-        +PlayerSkip()
-        +TakeDrawCard()
-    }
-    class GameController{
-        +int idPlayer
-        GameStart()
-        PlayerCurrent()
-        WinnerDecision()
-        GetDrawCard()
-    }
-    class CardOnGame{
-        +int CardPLayed
-        +leftEndValue
-        +RightEndValue
-    }
-    class DrawCard{
-        +ShuffleCard()
-    }
+class Game {
+    - IPlayer player1
+    - IPlayer player2
+    - List~DominoTile~ board
+    - List~DominoTile~ deck
+    - TurnManager turnManager
+    + startGame()
+    + playTurn()
+    + isGameOver() bool
+    + getWinner() string
+    + drawTile(IPlayer)
+    + canPlayerPlay(IPlayer) bool
+}
+
+class IPlayer {
+    <<interface>>
+    + string name
+    + List~DominoTile~ hand
+    + DominoTile chooseTile(List~DominoTile~ board)
+    + bool canPlay(List~DominoTile~ board)
+    + bool hasNoCards() 
+    + int getRemainingPoints()
+    + void addTileToHand(DominoTile tile)
+}
+
+class HumanPlayer {
+    + string name
+    + List~DominoTile~ hand
+    + DominoTile chooseTile(List~DominoTile~ board)
+    + bool canPlay(List~DominoTile~ board)
+    + bool hasNoCards() 
+    + int getRemainingPoints()
+    + void addTileToHand(DominoTile tile)
+}
+
+class AIPlayer {
+    + string name
+    + List~DominoTile~ hand
+    + DominoTile chooseTile(List~DominoTile~ board)
+    + bool canPlay(List~DominoTile~ board)
+    + bool hasNoCards() 
+    + int getRemainingPoints()
+    + void addTileToHand(DominoTile tile)
+}
+
+class DominoTile {
+    + int left
+    + int right
+    + bool isPlayed
+    + bool matches(int number)
+    + int getPoints()
+}
+
+class TurnManager {
+    - bool isPlayer1Turn
+    - Action~IPlayer~ onTurnExecute
+    + nextTurn(IPlayer player1, IPlayer player2)
+    + setOnTurnExecute(Action~IPlayer~ handler)
+    + getCurrentPlayer(IPlayer, IPlayer) IPlayer
+    + executeTurn(IPlayer)
+}
+
+Game --> TurnManager
+Game --> IPlayer : uses
+IPlayer <|.. HumanPlayer
+IPlayer <|.. AIPlayer
+IPlayer --> DominoTile
+Game --> DominoTile
