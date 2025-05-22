@@ -17,7 +17,7 @@ class Player{
 class ICard{
     <<interface>>
     +int id
-    +int rigthFaceValue
+    +int rightFaceValue
     +int leftFaceValue 
     +IsDouble() : bool
     +GetValue() : int
@@ -25,7 +25,7 @@ class ICard{
 class IDeck{
     <<interface>>
     +Shuffle() : void
-    +DrawCard() : Card
+    +DrawCard() : ICard
     +isEmpty() : bool
 }
 class IBoard{
@@ -49,16 +49,16 @@ class Board{
 }
 class Card{
     +int id
-    +int rigthFaceValue
+    +int rightFaceValue
     +int leftFaceValue   
-    +Card(int id, int rigthFaceValue, int leftFaceValue) 
+    +Card(int id, int rightFaceValue, int leftFaceValue) 
     +GetValue() : int
 }
 class GameController{
     -IDeck deck
     -IBoard board
     -List~IPlayer~ players
-    -Dictionary~IPlayer, List_Card~ hand
+    -Dictionary~IPlayer, List~Card~ hand
     -Dictionary~int, Card~ moveOptions
     -IPlayer currentPlayer
     -int maxPlayers
@@ -84,12 +84,12 @@ class GameController{
     +GetWinner() : IPlayer
     +CheckGameOver() : bool
 }
-IPlayer --o GameController : aggregation
+IPlayer --o GameController 
 IDeck --o GameController
 GameController o-- IBoard
-Deck --|> IDeck : Inheritance
-Board --|> IBoard : Inheritance
-Player --|> IPlayer : Inheritance
+Deck --|> IDeck 
+Board --|> IBoard 
+Player --|> IPlayer 
 Deck o-- ICard
-ICard --o Board : aggregation
-ICard <|.. Card : Realization
+Board --o ICard
+ICard <|.. Card 
