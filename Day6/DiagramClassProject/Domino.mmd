@@ -1,17 +1,15 @@
 classDiagram
 class IPlayer{
     <<interface>>
-    +int id
     +String name
     +int scores
     +GetTotalScores() : int
 }
 class Player{
-    +int id
     +String name
     +int scores
     +List~ICard~ hand
-    +Player(int id, string name)
+    +Player(string name, ICard card)
     +GetTotalScores() : int
 }
 class ICard{
@@ -30,7 +28,7 @@ class IDeck{
 }
 class IBoard{
     <<interface>>
-    +UpdateBoard(Card card, IPlayer player) : void
+    +UpdateBoard(Card card) : void
     +GetBoard() : List~Card~
    
 }
@@ -68,12 +66,11 @@ class GameController{
     -Action~bool~ onGameOver
     +SetupPlayers(int playerCount) : bool
     +AssignPlayerNames() : void
-    +StartGame(Action onGameStart)
     +DetermineFirstPlayer() : IPlayer
     +TurnOrder() : void
     +GetPlayableMoves(IPlayer player) : Dictionary~int, Card~
     +ExecuteMove(int option) : bool
-    +ValidateMove(Func~bool~ isGameOver) : bool
+    +ValidateMove(Action~bool~ onGameOver)
     +NextTurn(Action~IPlayer~ onPlayerTurn)
     +PassTurn() : void
     +GetValue(Card card) : int
@@ -82,6 +79,7 @@ class GameController{
     +ShowBoard(List~Card~ board) : void
     +ShowHand(List~Card~ hand) : void
     +CalculateScore() : int
+    +StartGame(Action onGameStart)
     +GetWinner() : IPlayer
     +CheckGameOver() : bool
 }
