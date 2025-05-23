@@ -34,10 +34,7 @@ class IBoard{
 }
 class Deck{
     -bool emptyDeck
-    -GenerateCard(ICard card)
     -List~ICard~ cards
-    +Shuffle() : void
-    +DrawCard() : ICard
     +isEmpty() : bool
 }
 class Board{
@@ -66,6 +63,9 @@ class GameController{
     -Action~bool~ onGameOver
     +SetupPlayers(int playerCount) : bool
     +AssignPlayerNames() : void
+    -GenerateCard(ICard card)
+    +Shuffle() : void
+    +DrawCard() : ICard
     +DetermineFirstPlayer() : IPlayer
     +TurnOrder() : void
     +GetPlayableMoves(IPlayer player) : Dictionary~int, Card~
