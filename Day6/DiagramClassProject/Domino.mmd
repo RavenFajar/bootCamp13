@@ -4,7 +4,7 @@ class IPlayer{
     +int id
     +String name
     +int scores
-    +GetTotalValue() : int
+    +GetTotalScores() : int
 }
 class Player{
     +int id
@@ -12,7 +12,7 @@ class Player{
     +int scores
     +List~ICard~ hand
     +Player(int id, string name)
-    +GetTotalValue() : int
+    +GetTotalScores() : int
 }
 class ICard{
     <<interface>>
@@ -36,7 +36,7 @@ class IBoard{
 }
 class Deck{
     -bool emptyDeck
-    -GenerateCard() : void
+    -GenerateCard(ICard card)
     -List~ICard~ cards
     +Shuffle() : void
     +DrawCard() : ICard
@@ -52,6 +52,7 @@ class Card{
     +int rightFaceValue
     +int leftFaceValue   
     +Card(int id, int rightFaceValue, int leftFaceValue) 
+    +IsDouble() : bool
     +GetValue() : int
 }
 class GameController{
@@ -67,6 +68,7 @@ class GameController{
     -Action~bool~ onGameOver
     +SetupPlayers(int playerCount) : bool
     +AssignPlayerNames() : void
+    +StartGame(Action onGameStart)
     +DetermineFirstPlayer() : IPlayer
     +TurnOrder() : void
     +GetPlayableMoves(IPlayer player) : Dictionary~int, Card~
@@ -75,9 +77,8 @@ class GameController{
     +NextTurn(Action~IPlayer~ onPlayerTurn)
     +PassTurn() : void
     +GetValue(Card card) : int
-    +GetScore(IPlayer player)
     +SetScore(IPlayer player)
-    +StartGame(Action onGameStart)
+    +GetScore(IPlayer player)
     +ShowBoard(List~Card~ board) : void
     +ShowHand(List~Card~ hand) : void
     +CalculateScore() : int
