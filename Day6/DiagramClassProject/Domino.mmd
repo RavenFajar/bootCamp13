@@ -60,9 +60,10 @@ class GameController{
     -Action OnGameStart
     -Action~IPlayer~ OnPlayerTurn
     -Action~bool~ OnGameOver
+    +GameController(IPlayer, IDeck Deck, IBoard Board)
     +SetupPlayers(int playerCount) : void
     +AssignPlayerNames() : void
-    +SetHandCard(IPlayer):ICard card
+    +SetHandCard(IPlayer): void
     +GetHandCard(IPlayer):ICard card
     +DetermineFirstPlayer() : IPlayer
     +TurnOrder() : void
@@ -71,7 +72,7 @@ class GameController{
     +ValidateMove(Action~bool~ OnGameOver)
     +NextTurn(Action~IPlayer~ OnPlayerTurn)
     +PassTurn() : void
-    +ShowBoard(List~Card~ board) : void
+    +ShowBoard(List~Card~ playedCards) : void
     +ShowHand(List~Card~ hand) : void
     +GetValue(Card card) : int
     +SetScore(IPlayer player)
@@ -80,7 +81,7 @@ class GameController{
     +StartGame(Action OnGameStart)
     +GetWinner() : IPlayer
     +CheckGameOver() : bool
-    -GenerateCard(ICard card)
+    +GenerateCard(ICard card)
     +Shuffle() : void
     +DrawCard() : ICard
 }
