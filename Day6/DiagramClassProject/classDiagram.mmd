@@ -85,17 +85,17 @@ class GameController{
     +DetermineFirstPlayer() : IPlayer
     +GetLeftEndValue() : int
     +GetRightEndValue() : int
-    +CanPlaceCard(ICard card) : bool
     +UpdateEndValues() : void
-    +CreateCardPlacement(ICard card, Side side, bool flipped, int value) : CardPlacement
-    +CreatePlacementInfo(bool canPlace, Side side, bool needsFlip) : PlacementInfo
-    +GetPlayableMoves(IPlayer player) : Dictionary~int id, CardPlacement~
-    +ExecuteMove(int option, Side placementSide) : bool
+    +CanPlaceCard(ICard card) : bool
     +CanConnect(int value) : bool
     +GetConnectingValue(Side side) : int
+    +CreatePlacementInfo(bool canPlace, Side side, bool needsFlip) : PlacementInfo
+    +FlipCard(ICard card) : void
+    +CreateCardPlacement(ICard card, Side side, bool flipped, int value) : CardPlacement
+    +GetPlayableMoves(IPlayer player) : Dictionary~int id, CardPlacement~
+    +ExecuteMove(int option, Side placementSide) : bool
     +ValidateMove(ICard card, Side side) : bool
     +PlaceCardOnBoard(ICard card, Side side) : bool
-    +FlipCard(ICard card) : void
     +NextTurn(Action~IPlayer~ OnPlayerTurn)
     +PassTurn() : void
     +ShowBoard() : void
