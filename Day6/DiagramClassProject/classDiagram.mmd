@@ -20,8 +20,6 @@ class ICard{
     +int leftFaceValue 
     +IsDouble() : bool
     +GetValue() : int
-    +CanConnect(int value) : bool
-    +GetConnectingValue(Side side) : int
 }
 class IDeck{
     <<interface>>
@@ -32,9 +30,6 @@ class IBoard{
     <<interface>>
     +UpdateBoard(Card card, Side side) : void
     +GetBoard() : List~Card~
-    +GetLeftEndValue() : int
-    +GetRightEndValue() : int
-    +CanPlaceCard(ICard card) : PlacementInfo
 }
 class Deck{
     -bool emptyDeck
@@ -43,14 +38,8 @@ class Deck{
 }
 class Board{
     -List~ICard~ playedCards
-    -int leftEndValue
-    -int rightEndValue
     +UpdateBoard(ICard card, Side side) : void
     +GetBoard() : List~ICard~
-    +GetLeftEndValue() : int
-    +GetRightEndValue() : int
-    +CanPlaceCard(ICard card) : PlacementInfo
-    -UpdateEndValues() : void
 }
 class Card{
     +int id
@@ -59,27 +48,11 @@ class Card{
     +Card(int id, int rightFaceValue, int leftFaceValue) 
     +IsDouble() : bool
     +GetValue() : int
-    +CanConnect(int value) : bool
-    +GetConnectingValue(Side side) : int
-    +Flip() : void
 }
 class Side{
     <<enumeration>>
     LEFT
     RIGHT
-}
-class PlacementInfo{
-    +bool canPlace
-    +Side allowedSide
-    +bool needsFlip
-    +PlacementInfo(bool canPlace, Side side, bool needsFlip)
-}
-class CardPlacement{
-    +ICard card
-    +Side placementSide
-    +bool isFlipped
-    +int connectingValue
-    +CardPlacement(ICard card, Side side, bool flipped, int value)
 }
 class GameController{
     -IDeck deck
@@ -94,6 +67,14 @@ class GameController{
     -Action OnGameStart
     -Action~IPlayer~ OnPlayerTurn
     -Action~bool~ OnGameOver
+    +Side placementSide
+    +bool isFlipped
+    +int connectingValue
+    +bool canPlace
+    +Side allowedSide
+    +bool needsFlip
+    +int leftEndValue
+    +int rightEndValue
     +GameController(IPlayer Player, IDeck Deck, IBoard Board)
     +SetupPlayers(int playerCount) : void
     +AssignPlayerNames() : void
@@ -102,27 +83,41 @@ class GameController{
     +GetHandCard(IPlayer): ICard card 
     +TurnOrder() : void
     +DetermineFirstPlayer() : IPlayer
-    +GetPlayableMoves(IPlayer player) : Dictionary~int id, CardPlacement~ moveOptions
+    +GetLeftEndValue() : int
+    +GetRightEndValue() : int
+    +CanPlaceCard(ICard card) : bool
+    +UpdateEndValues() : void
+    +CreateCardPlacement(ICard card, Side side, bool flipped, int value) : CardPlacement
+    +CreatePlacementInfo(bool canPlace, Side side, bool needsFlip) : PlacementInfo
+    +GetPlayableMoves(IPlayer player) : Dictionary~int id, CardPlacement~
     +ExecuteMove(int option, Side placementSide) : bool
+    +CanConnect(int value) : bool
+    +GetConnectingValue(Side side) : int
     +ValidateMove(ICard card, Side side) : bool
     +PlaceCardOnBoard(ICard card, Side side) : bool
+    +FlipCard(ICard card) : void
     +NextTurn(Action~IPlayer~ OnPlayerTurn)
     +PassTurn() : void
-    +ShowBoard(List~Card~ playedCards) : void
-    +ShowHand(IPlayer Player): List~Card~ hand 
-    +CalculateScore(IPlayer handValue) : int
+    +ShowBoard() : void
+    +ShowHand(IPlayer Player): void 
+    +CalculateScore(IPlayer player) : int
+    +UpdatePlayerScore(IPlayer player) : void
     +SetScore(IPlayer player) : void
-    +GetScore(IPlayer player) : int score
-    +GetWinner(int winScore) : IPlayer
+    +GetScore(IPlayer player) : int
+    +GetWinner() : IPlayer
     +CheckGameOver() : bool
-    +GenerateCard(ICard card)
+    +CreateCard(int id, int right, int left) : ICard
+    +GenerateStandardDeck() : void
     +Shuffle() : void
     +DrawCard() : ICard
+    +DistributeCards() : void
+    +IsGameStarted() : bool
+    +GetCurrentPlayer() : IPlayer
+    +GetPlayerCount() : int
 }
 IPlayer --o GameController 
 IDeck --o GameController
 GameController o-- IBoard
-GameController o-- ICard
 Deck --|> IDeck 
 Board --|> IBoard 
 Player --|> IPlayer 
@@ -130,10 +125,4 @@ Deck o-- ICard
 Board --o ICard
 ICard <|.. Card 
 GameController ..> Side
-GameController ..> PlacementInfo
-GameController ..> CardPlacement
-Board ..> PlacementInfo
 Board ..> Side
-Card ..> Side
-IBoard ..> PlacementInfo
-ICard ..> Side
