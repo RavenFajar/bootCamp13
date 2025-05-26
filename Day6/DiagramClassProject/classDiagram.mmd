@@ -91,8 +91,8 @@ class GameController{
     +GetConnectingValue(Side side) : int
     +CreatePlacementInfo(bool canPlace, Side side, bool needsFlip) : PlacementInfo
     +FlipCard(ICard card) : void
-    +CreateCardPlacement(ICard card, Side side, bool flipped, int value) : CardPlacement
     +GetPlayableMoves(IPlayer player) : Dictionary~int id, CardPlacement~
+    +CreateCardPlacement(ICard card, Side side, bool flipped, int value) : CardPlacement
     +ExecuteMove(int option, Side placementSide) : bool
     +PlaceCardOnBoard(ICard card, Side side) : void
     +NextTurn(Action~IPlayer~ OnPlayerTurn)
