@@ -1,21 +1,138 @@
 classDiagram
-    Animal <|-- Duck
-    Animal <|-- Fish
-    Animal <|-- Zebra
-    Animal : +int age
-    Animal : +String gender
-    Animal: +isMammal()
-    Animal: +mate()
-    class Duck{
-      +String beakColor
-      +swim()
-      +quack()
-    }
-    class Fish{
-      -int sizeInFeet
-      -canEat()
-    }
-    class Zebra{
-      +bool is_wild
-      +run()
-    }
+class IPlayer{
+    <<interface>>
+    +string name
+    +int score
+    +int handValue
+    +int GetHandValue() : int
+}
+class Player{
+    +string name
+    +int score
+    +int handValue
+    +Player(string name, ICard card)
+    +int GetHandValue() : int
+}
+class ICard{
+    <<interface>>
+    +int id
+    +int rightFaceValue
+    +int leftFaceValue 
+    +IsDouble() : bool
+    +GetValue() : int
+    +CanConnect(int value) : bool
+    +GetConnectingValue(Side side) : int
+}
+class IDeck{
+    <<interface>>
+    -bool emptyDeck
+    +isEmpty() : bool
+}
+class IBoard{
+    <<interface>>
+    +UpdateBoard(Card card, Side side) : void
+    +GetBoard() : List~Card~
+    +GetLeftEndValue() : int
+    +GetRightEndValue() : int
+    +CanPlaceCard(ICard card) : PlacementInfo
+}
+class Deck{
+    -bool emptyDeck
+    -List~ICard~ cards
+    +isEmpty() : bool
+}
+class Board{
+    -List~ICard~ playedCards
+    -int leftEndValue
+    -int rightEndValue
+    +UpdateBoard(ICard card, Side side) : void
+    +GetBoard() : List~ICard~
+    +GetLeftEndValue() : int
+    +GetRightEndValue() : int
+    +CanPlaceCard(ICard card) : PlacementInfo
+    -UpdateEndValues() : void
+}
+class Card{
+    +int id
+    +int rightFaceValue
+    +int leftFaceValue   
+    +Card(int id, int rightFaceValue, int leftFaceValue) 
+    +IsDouble() : bool
+    +GetValue() : int
+    +CanConnect(int value) : bool
+    +GetConnectingValue(Side side) : int
+    +Flip() : void
+}
+class Side{
+    <<enumeration>>
+    LEFT
+    RIGHT
+}
+class PlacementInfo{
+    +bool canPlace
+    +Side allowedSide
+    +bool needsFlip
+    +PlacementInfo(bool canPlace, Side side, bool needsFlip)
+}
+class CardPlacement{
+    +ICard card
+    +Side placementSide
+    +bool isFlipped
+    +int connectingValue
+    +CardPlacement(ICard card, Side side, bool flipped, int value)
+}
+class GameController{
+    -IDeck deck
+    -IBoard board
+    -List~IPlayer~ players
+    -Dictionary<.IPlayer, List~Card~> hand
+    -Dictionary~int id, CardPlacement~ moveOptions
+    -IPlayer currentPlayer
+    -int playerCount
+    -int maxPlayers
+    -int winScore
+    -Action OnGameStart
+    -Action~IPlayer~ OnPlayerTurn
+    -Action~bool~ OnGameOver
+    +GameController(IPlayer Player, IDeck Deck, IBoard Board)
+    +SetupPlayers(int playerCount) : void
+    +AssignPlayerNames() : void
+    +StartGame(Action OnGameStart)
+    +SetHandCard(IPlayer): void
+    +GetHandCard(IPlayer): ICard card 
+    +TurnOrder() : void
+    +DetermineFirstPlayer() : IPlayer
+    +GetPlayableMoves(IPlayer player) : Dictionary~int id, CardPlacement~ moveOptions
+    +ExecuteMove(int option, Side placementSide) : bool
+    +ValidateMove(ICard card, Side side) : bool
+    +PlaceCardOnBoard(ICard card, Side side) : bool
+    +NextTurn(Action~IPlayer~ OnPlayerTurn)
+    +PassTurn() : void
+    +ShowBoard(List~Card~ playedCards) : void
+    +ShowHand(IPlayer Player): List~Card~ hand 
+    +CalculateScore(IPlayer handValue) : int
+    +SetScore(IPlayer player) : void
+    +GetScore(IPlayer player) : int score
+    +GetWinner(int winScore) : IPlayer
+    +CheckGameOver() : bool
+    +GenerateCard(ICard card)
+    +Shuffle() : void
+    +DrawCard() : ICard
+}
+IPlayer --o GameController 
+IDeck --o GameController
+GameController o-- IBoard
+Deck --|> IDeck 
+Board --|> IBoard 
+Player --|> IPlayer 
+Deck o-- ICard
+Board --o ICard
+ICard <|.. Card 
+GameController ..> Side
+GameController ..> PlacementInfo
+GameController ..> CardPlacement
+Board ..> PlacementInfo
+Board ..> Side
+Card ..> Side
+IBoard ..> PlacementInfo
+ICard ..> Side
