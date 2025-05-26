@@ -94,14 +94,12 @@ class GameController{
     +CreateCardPlacement(ICard card, Side side, bool flipped, int value) : CardPlacement
     +GetPlayableMoves(IPlayer player) : Dictionary~int id, CardPlacement~
     +ExecuteMove(int option, Side placementSide) : bool
-    +ValidateMove(ICard card, Side side) : bool
-    +PlaceCardOnBoard(ICard card, Side side) : bool
+    +PlaceCardOnBoard(ICard card, Side side) : void
     +NextTurn(Action~IPlayer~ OnPlayerTurn)
     +PassTurn() : void
     +ShowBoard() : void
     +ShowHand(IPlayer Player): void 
     +CalculateScore(IPlayer player) : int
-    +UpdatePlayerScore(IPlayer player) : void
     +SetScore(IPlayer player) : void
     +GetScore(IPlayer player) : int
     +GetWinner() : IPlayer
@@ -110,10 +108,6 @@ class GameController{
     +GenerateStandardDeck() : void
     +Shuffle() : void
     +DrawCard() : ICard
-    +DistributeCards() : void
-    +IsGameStarted() : bool
-    +GetCurrentPlayer() : IPlayer
-    +GetPlayerCount() : int
 }
 IPlayer --o GameController 
 IDeck --o GameController
