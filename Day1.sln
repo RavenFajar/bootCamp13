@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperatorOverloading", "AllD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2ndLogic", "Day6\2ndLogic\2ndLogic.csproj", "{58E33DA3-2ED6-4153-BACC-3D700842DC39}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleShip", "BattleShip\BattleShip.csproj", "{546BDA91-63FE-40F2-B86A-983716E15831}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{58E33DA3-2ED6-4153-BACC-3D700842DC39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58E33DA3-2ED6-4153-BACC-3D700842DC39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58E33DA3-2ED6-4153-BACC-3D700842DC39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{546BDA91-63FE-40F2-B86A-983716E15831}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{546BDA91-63FE-40F2-B86A-983716E15831}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{546BDA91-63FE-40F2-B86A-983716E15831}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{546BDA91-63FE-40F2-B86A-983716E15831}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
