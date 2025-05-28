@@ -606,7 +606,6 @@ namespace BattleshipGame
 
             var gameController = new GameController(players, display);
             
-            // Subscribe to events
             gameController.OnInitializing += player => 
                 display.ShowMessage($"Initializing {player.Name}...");
             
