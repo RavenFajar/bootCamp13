@@ -1,0 +1,15 @@
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\BattleShip\bin\Debug\net8.0\BattleShip.exe
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\BattleShip\bin\Debug\net8.0\BattleShip.deps.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\BattleShip\bin\Debug\net8.0\BattleShip.runtimeconfig.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\BattleShip\bin\Debug\net8.0\BattleShip.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\BattleShip\bin\Debug\net8.0\BattleShip.pdb
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\BattleShip\obj\Debug\net8.0\BattleShip.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\BattleShip\obj\Debug\net8.0\BattleShip.AssemblyInfoInputs.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\BattleShip\obj\Debug\net8.0\BattleShip.AssemblyInfo.cs
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\BattleShip\obj\Debug\net8.0\BattleShip.csproj.CoreCompileInputs.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\BattleShip\obj\Debug\net8.0\BattleShip.sourcelink.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\BattleShip\obj\Debug\net8.0\BattleShip.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\BattleShip\obj\Debug\net8.0\refint\BattleShip.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\BattleShip\obj\Debug\net8.0\BattleShip.pdb
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\BattleShip\obj\Debug\net8.0\BattleShip.genruntimeconfig.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\BattleShip\obj\Debug\net8.0\ref\BattleShip.dll
