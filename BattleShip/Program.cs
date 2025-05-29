@@ -1,4 +1,3 @@
-// Console.WriteLine("Hello, World!");
 
 public enum FleetType
 {
@@ -157,51 +156,43 @@ public class Board : IBoard
 }
 public class GameController
 {
-    private readonly List<IPlayer> _players;
+    private List<IPlayer> _players;
     private Dictionary<IPlayer, IBoard> _playerBoard;
     private Dictionary<IPlayer, List<IShip>> _playerShips;
     private IDisplay _display;
     private IPlayer _currentPlayer;
     private IPlayer _otherPlayer;
     private bool _runGame;
-    public Action<string> OnInitializing;
-    public Action<string> OnHit;
-    public Action<string> OnChangingTurn;
-    public Action<string> OnEndingGame;
 
-    public GameController(List<IPlayer> players)
+    public event Action<string>? OnInitializing;
+    public event Action<string>? OnHit;
+    public event Action<string>? OnChangingTurn;
+    public event Action<string>? OnEndingGame;
+
+    public GameController(List<IPlayer> players, IDisplay display = null)
     {
         _players = players ?? throw new ArgumentNullException(nameof(players));
-        new Display();
+        _display = display ?? new Display();
         _playerBoard = new Dictionary<IPlayer, IBoard>();
         _playerShips = new Dictionary<IPlayer, List<IShip>>();
         _runGame = false;
+        _currentPlayer = _players[0];
+        _otherPlayer = _players[1];
 
         if (_players.Count != 2)
             throw new ArgumentException("Game requires exactly 2 players");
     }
-    private List<IShip> CreateDefaultFleet()
-    {
-        return new List<IShip>
-            {
-                new Ship(5, Orientation.Horizontal, "Carrier"),
-                new Ship(4, Orientation.Horizontal, "Battleship"),
-                new Ship(3, Orientation.Horizontal, "Cruiser"),
-                new Ship(3, Orientation.Horizontal, "Submarine"),
-                new Ship(2, Orientation.Horizontal, "Destroyer")
-            };
-    }
+
     public void Setup()
     {
         foreach (var player in _players)
         {
-            // public int sizeBoard = Convert.ToInt32(Console.ReadLine());
             var board = new Board(10);
             var ships = CreateDefaultFleet();
 
             SetBoard(player, board);
             SetShips(player, ships);
-            Initializing(player);
+            // Initializing(player);
         }
 
         _currentPlayer = _players[0];
@@ -222,42 +213,39 @@ public class GameController
         _playerShips[player] = ships;
         return true;
     }
-    public void Initializing(IPlayer player)
-    {
-        OnInitializing? Invoke(player);
+    // public void Initializing(IPlayer player)
+    // {
+    //     _display.ShowMessage($"\n{player.Name}, place your ships!");
+    //     var board = _playerBoard[player];
+    //     var ships = _playerShips[player];
 
-        _display.ShowMessage($"\n{player.Name}, place your ships!");
-        var board = _playerBoard[player];
-        var ships = _playerShips[player];
+    //     foreach (var ship in ships)
+    //     {
+    //         bool placed = false;
+    //         while (!placed)
+    //         {
+    //             _display.ShowMessage($"\nPlacing {ship.Type} (Length: {ship.Length})");
 
-        foreach (var ship in ships)
-        {
-            bool placed = false;
-            while (!placed)
-            {
-                _display.ShowBoard(board);
-                _display.ShowMessage($"\nPlacing {ship.Type} (Length: {ship.Length})");
+    //             var coordinate = SetTile;
 
-                var coordinate = _display.GetCoordinateInput();
+    //             Console.Write("Orientation (H for Horizontal, V for Vertical): ");
+    //             string orientationInput = Console.ReadLine()?.ToUpper();
+    //             var orientation = orientationInput == "V" ? Orientation.Vertical : Orientation.Horizontal;
 
-                Console.Write("Orientation (H for Horizontal, V for Vertical): ");
-                string orientationInput = Console.ReadLine()?.ToUpper();
-                var orientation = orientationInput == "V" ? Orientation.Vertical : Orientation.Horizontal;
+    //             ship.Orientation = orientation;
 
-                ship.Orientation = orientation;
-
-                if (PlaceShip(ship, coordinate))
-                {
-                    placed = true;
-                    _display.ShowMessage($"{ship.Type} placed successfully!");
-                }
-                else
-                {
-                    _display.ShowMessage("Invalid placement. Try again.");
-                }
-            }
-        }
-    }
+    //             if (PlaceShip(ship, coordinate))
+    //             {
+    //                 placed = true;
+    //                 _display.ShowMessage($"{ship.Type} placed successfully!");
+    //             }
+    //             else
+    //             {
+    //                 _display.ShowMessage("Invalid placement. Try again.");
+    //             }
+    //         }
+    //     }
+    // }
     public Orientation RotateShip(Orientation orientation)
     {
         return orientation == Orientation.Horizontal ? Orientation.Vertical : Orientation.Horizontal;
@@ -289,118 +277,162 @@ public class GameController
         ship.Coordinates = coordinates;
         foreach (var coord in coordinates)
         {
-            board.Tiles[coord.AxisX, coord.AxisY] = Tile.Ship;
+            board.Tiles[coord.AxisX, coord.AxisY] = TileType.Ship;
         }
 
         return true;
     }
-}
-public GetTile(IPlayer player, Coordinate coordinate) { }
-public void SetTile(IPlayer player, Coordinate coordinate, Tile tile) { }
-public GetShip(IPlayer player, Coordinate coordinate) { }
-public void SetHitShip(IShip ship) { }
-public GetCurrentPlayer()
-{
-    return _currentPlayer;
-}
-public GetOtherPlayer()
-{
-    return _otherPlayer;
-}
-public void Start() { 
-    _runGame = true;
-            
-            while (_runGame)
-            {
-                _display.ShowMessage($"\n{_currentPlayer.Name}'s turn!");
-                _display.ShowMessage("Enemy board:");
-                _display.ShowBoard(_playerBoard[_otherPlayer], true);
-                
-                LaunchHit(_currentPlayer);
-                
-                if (IsFleetDestroyed(_playerShips[_otherPlayer]))
-                {
-                    _display.ShowMessage($"\n{_currentPlayer.Name} wins!");
-                    EndGame();
-                }
-                else
-                {
-                    ChangeTurn(_players);
-                }
-            }
-}
-public void LaunchHit(IPlayer player) { 
-    var coordinate = _display.GetCoordinateInput();
-            Hit(player, coordinate);
-}
-public void Hit(IPlayer player, Coordinate coordinate) { 
-    if (!IsValidHit(player, coordinate))
-            {
-                _display.ShowMessage("Invalid target. Try again.");
-                LaunchHit(player);
-                return;
-            }
+    public TileType GetTile(IPlayer player, Coordinate coordinate)
+    {
+        var board = _playerBoard[player];
+        if (coordinate.AxisX < 0 || coordinate.AxisX >= board.Size ||
+            coordinate.AxisY < 0 || coordinate.AxisY >= board.Size)
+            return TileType.Empty;
 
-            RegisterHit(player, coordinate);
-}
-public void RegisterHit(IPlayer player, Coordinate coordinate) {
-     var target = _otherPlayer;
-            var tile = GetTile(target, coordinate);
-            
-            if (tile == Tile.Ship)
+        return board.Tiles[coordinate.AxisX, coordinate.AxisY];
+    }
+    public void SetTile(IPlayer player, Coordinate coordinate, TileType tile)
+    {
+        var board = _playerBoard[player];
+        if (coordinate.AxisX >= 0 && coordinate.AxisY >= 0 && coordinate.AxisX <= board.Size && coordinate.AxisY <= board.Size)
+        {
+            board.Tiles[coordinate.AxisX, coordinate.AxisY] = tile;
+        }
+
+    }
+    public IShip GetShip(IPlayer player, Coordinate coordinate)
+    {
+        var ships = _playerShips[player];
+        return ships.FirstOrDefault(ship => ship.Coordinates.Contains(coordinate));
+    }
+    public void SetHitShip(IShip ship)
+    {
+        ship.HitCount++;
+    }
+    public IPlayer GetCurrentPlayer()
+    {
+        return _currentPlayer;
+    }
+    public IPlayer GetOtherPlayer()
+    {
+        return _otherPlayer;
+    }
+    public void Start()
+    {
+        _runGame = true;
+
+        while (_runGame)
+        {
+            _display.ShowMessage($"\n{_currentPlayer.Name}'s turn!");
+            _display.ShowMessage("Enemy board:");
+
+            LaunchHit(_currentPlayer);
+
+            if (IsFleetDestroyed(_playerShips[_otherPlayer]))
             {
-                var ship = GetShip(target, coordinate);
-                SetHitShip(ship);
-                SetTile(target, coordinate, Tile.Hit);
-                
-                _display.ShowMessage("Hit!");
-                OnHit?.Invoke(target, ship);
-                
-                if (IsSunk(ship))
-                {
-                    _display.ShowMessage($"{ship.Type} sunk!");
-                    foreach (var coord in ship.Coordinates)
-                    {
-                        SetTile(target, coord, Tile.SunkenShip);
-                    }
-                }
+                _display.ShowMessage($"\n{_currentPlayer.Name} wins!");
+                EndGame(player: _currentPlayer);
             }
             else
             {
-                SetTile(target, coordinate, Tile.Miss);
-                _display.ShowMessage("Miss!");
+                ChangeTurn(_otherPlayer);
             }
- }
-public IsValidPlacement(IPlayer player, Coordinate coordinate) {
-     var board = _playerBoard[player];
-            return coordinate.AxisX >= 0 && coordinate.AxisX < board.Size &&
-                   coordinate.AxisY >= 0 && coordinate.AxisY < board.Size;
- }
-public IsValidHit(IPlayer player, Coordinate coordinate) {
-    var board = _playerBoard[_otherPlayer];
-            if (coordinate.AxisX < 0 || coordinate.AxisX >= board.Size ||
-                coordinate.AxisY < 0 || coordinate.AxisY >= board.Size)
-                return false;
+        }
+    }
+    public void LaunchHit(IPlayer player)
+    {
 
-            var tile = GetTile(_otherPlayer, coordinate);
-            return tile != Tile.Hit && tile != Tile.Miss && tile != Tile.SunkenShip;
- }
-public IsHit(IPlayer player, Coordinate coordinated) {
-    var tile = GetTile(player, coordinate);
-            return tile == Tile.Hit || tile == Tile.SunkenShip;
- }
-public IsSunk(IShip ship)
-{
-    return ship.HitCount == ship.Length;
+        // Hit(player, coordinate);
+    }
+    public void Hit(IPlayer player, Coordinate coordinate)
+    {
+        if (!IsValidHit(player, coordinate))
+        {
+            _display.ShowMessage("Invalid target. Try again.");
+            LaunchHit(player);
+            return;
+        }
+
+        RegisterHit(player, coordinate);
+    }
+    public void RegisterHit(IPlayer player, Coordinate coordinate)
+    {
+        var target = _otherPlayer;
+        var tile = GetTile(target, coordinate);
+
+        if (tile == TileType.Ship)
+        {
+            var ship = GetShip(target, coordinate);
+            SetHitShip(ship);
+            SetTile(target, coordinate, TileType.Hit);
+
+            _display.ShowMessage("Hit!");
+            OnHit?.Invoke($"{target.Name} hit {ship.Type}");
+
+            if (IsSunk(ship))
+            {
+                _display.ShowMessage($"{ship.Type} sunk!");
+                foreach (var coord in ship.Coordinates)
+                {
+                    SetTile(target, coord, TileType.SunkenShip);
+                }
+            }
+        }
+        else
+        {
+            SetTile(target, coordinate, TileType.Miss);
+            _display.ShowMessage("Miss!");
+        }
+    }
+    public bool IsValidPlacement(IPlayer player, Coordinate coordinate)
+    {
+        var board = _playerBoard[player];
+        return coordinate.AxisX >= 0 && coordinate.AxisX < board.Size &&
+               coordinate.AxisY >= 0 && coordinate.AxisY < board.Size;
+    }
+    public bool IsValidHit(IPlayer player, Coordinate coordinate)
+    {
+        var board = _playerBoard[_otherPlayer];
+        if (coordinate.AxisX < 0 || coordinate.AxisX >= board.Size ||
+            coordinate.AxisY < 0 || coordinate.AxisY >= board.Size)
+            return false;
+
+        var tile = GetTile(_otherPlayer, coordinate);
+        return tile != TileType.Hit && tile != TileType.Miss && tile != TileType.SunkenShip;
+    }
+    public bool IsHit(IPlayer player, Coordinate coordinated)
+    {
+        var tile = GetTile(player, coordinated);
+        return tile == TileType.Hit || tile == TileType.SunkenShip;
+    }
+    public bool IsSunk(IShip ship)
+    {
+        return ship.HitCount == ship.Length;
+    }
+    public bool IsFleetDestroyed(List<IShip> fleet)
+    {
+        return fleet.All(ship => IsSunk(ship));
+    }
+    public void ChangeTurn(IPlayer player)
+    {
+        OnChangingTurn?.Invoke(player.Name);
+        (_currentPlayer, _otherPlayer) = (_otherPlayer, _currentPlayer);
+    }
+    public void EndGame(IPlayer player)
+    {
+        _runGame = false;
+        OnEndingGame.Invoke(player.Name);
+    }
+    private List<IShip> CreateDefaultFleet()
+    {
+        return new List<IShip>
+            {
+                new Ship(5, Orientation.Horizontal, "Carrier"),
+                new Ship(4, Orientation.Horizontal, "Battleship"),
+                new Ship(3, Orientation.Horizontal, "Cruiser"),
+                new Ship(3, Orientation.Horizontal, "Submarine"),
+                new Ship(2, Orientation.Horizontal, "Destroyer")
+            };
+    }
 }
-public IsFleetDestroyed(List<IShip> fleet) { }
-public void ChangeTurn(List<IPlayer> players)
-{
-    OnChangingTurn?.Invoke(players);
-    (_currentPlayer, _otherPlayer) = (_otherPlayer, _currentPlayer);
-}
-public void EndGame()
-{
-    _runGame = false;
-    OnEndingGame?.Invoke();
-}
+
