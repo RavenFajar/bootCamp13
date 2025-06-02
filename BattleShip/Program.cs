@@ -169,18 +169,37 @@ public class GameController
     public event Action<string>? OnChangingTurn;
     public event Action<string>? OnEndingGame;
 
-    public GameController(List<IPlayer> players, IDisplay display = null)
+    public GameController(List<IPlayer> players, IDisplay display = null!)
     {
         _players = players ?? throw new ArgumentNullException(nameof(players));
         _display = display ?? new Display();
+        InitializeGame();
+    }
+
+    private void InitializeGame()
+    {
+        ValidatePlayers();
+        InitializeBoardsAndShips();
+        InitializeTurnOrder();
+    }
+
+    private void ValidatePlayers()
+    {
+        if (_players.Count != 2)
+            throw new ArgumentException("Game requires exactly 2 players");
+    }
+
+    private void InitializeBoardsAndShips()
+    {
         _playerBoard = new Dictionary<IPlayer, IBoard>();
         _playerShips = new Dictionary<IPlayer, List<IShip>>();
+    }
+
+    private void InitializeTurnOrder()
+    {
         _runGame = false;
         _currentPlayer = _players[0];
         _otherPlayer = _players[1];
-
-        if (_players.Count != 2)
-            throw new ArgumentException("Game requires exactly 2 players");
     }
 
     public void Setup()
@@ -213,39 +232,51 @@ public class GameController
         _playerShips[player] = ships;
         return true;
     }
-    // public void Initializing(IPlayer player)
-    // {
-    //     _display.ShowMessage($"\n{player.Name}, place your ships!");
-    //     var board = _playerBoard[player];
-    //     var ships = _playerShips[player];
+    public void Initializing(IPlayer player)
+    {
+        _display.ShowMessage($"\n{player.Name}, place your ships!");
+        var board = _playerBoard[player];
+        var ships = _playerShips[player];
 
-    //     foreach (var ship in ships)
-    //     {
-    //         bool placed = false;
-    //         while (!placed)
-    //         {
-    //             _display.ShowMessage($"\nPlacing {ship.Type} (Length: {ship.Length})");
+        foreach (var ship in ships)
+        {
+            bool placed = false;
+            while (!placed)
+            {
+                _display.ShowMessage($"\nPlacing {ship.Type} (Length: {ship.Length})");
 
-    //             var coordinate = SetTile;
+                // Prompt user for coordinates
+                Console.Write("Enter starting X coordinate (0-9): ");
+                int x;
+                while (true)
+                {
+                    Console.Write("Enter starting X coordinate (0-9): ");
+                    if (int.TryParse(Console.ReadLine(), out x))
+                        break;
+                    Console.WriteLine("Invalid input. Please enter a valid number.");
+                }
+                Console.Write("Enter starting Y coordinate (0-9): ");
+                int y = int.TryParse(Console.ReadLine(), out int tempY) ? tempY : 0;
+                var coordinate = new Coordinate(x, y);
 
-    //             Console.Write("Orientation (H for Horizontal, V for Vertical): ");
-    //             string orientationInput = Console.ReadLine()?.ToUpper();
-    //             var orientation = orientationInput == "V" ? Orientation.Vertical : Orientation.Horizontal;
+                Console.Write("Orientation (H for Horizontal, V for Vertical): ");
+                string orientationInput = Console.ReadLine()?.ToUpper();
+                var orientation = orientationInput == "V" ? Orientation.Vertical : Orientation.Horizontal;
 
-    //             ship.Orientation = orientation;
+                ship.Orientation = orientation;
 
-    //             if (PlaceShip(ship, coordinate))
-    //             {
-    //                 placed = true;
-    //                 _display.ShowMessage($"{ship.Type} placed successfully!");
-    //             }
-    //             else
-    //             {
-    //                 _display.ShowMessage("Invalid placement. Try again.");
-    //             }
-    //         }
-    //     }
-    // }
+                if (PlaceShip(ship, coordinate))
+                {
+                    placed = true;
+                    _display.ShowMessage($"{ship.Type} placed successfully!");
+                }
+                else
+                {
+                    _display.ShowMessage("Invalid placement. Try again.");
+                }
+            }
+        }
+    }
     public Orientation RotateShip(Orientation orientation)
     {
         return orientation == Orientation.Horizontal ? Orientation.Vertical : Orientation.Horizontal;
@@ -357,6 +388,12 @@ public class GameController
     }
     public void RegisterHit(IPlayer player, Coordinate coordinate)
     {
+        if (_otherPlayer == null)
+        {
+            _display.ShowMessage("Error: Opponent player is not initialized.");
+            return;
+        }
+
         var target = _otherPlayer;
         var tile = GetTile(target, coordinate);
 
@@ -421,7 +458,7 @@ public class GameController
     public void EndGame(IPlayer player)
     {
         _runGame = false;
-        OnEndingGame.Invoke(player.Name);
+        OnEndingGame?.Invoke(player.Name);
     }
     private List<IShip> CreateDefaultFleet()
     {
