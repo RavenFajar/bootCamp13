@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\2ndLogic\\2ndLogic.csproj",
+      "projectUniqueName": "C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\Day6\\2ndLogic\\2ndLogic.csproj",
       "projectName": "2ndLogic",
-      "projectPath": "C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\2ndLogic\\2ndLogic.csproj",
+      "projectPath": "C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\Day6\\2ndLogic\\2ndLogic.csproj",
       "packagesPath": "C:\\Users\\Raven BootCamp 13\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\2ndLogic\\obj\\",
+      "outputPath": "C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\Day6\\2ndLogic\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Raven BootCamp 13\\AppData\\Roaming\\NuGet\\NuGet.Config"
