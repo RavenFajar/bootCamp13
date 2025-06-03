@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\Asynchronous\\Asynchronous.csproj": {}
+    "C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\Day7\\Asynchronous\\Asynchronous.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\Asynchronous\\Asynchronous.csproj": {
+    "C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\Day7\\Asynchronous\\Asynchronous.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\Asynchronous\\Asynchronous.csproj",
+        "projectUniqueName": "C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\Day7\\Asynchronous\\Asynchronous.csproj",
         "projectName": "Asynchronous",
-        "projectPath": "C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\Asynchronous\\Asynchronous.csproj",
+        "projectPath": "C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\Day7\\Asynchronous\\Asynchronous.csproj",
         "packagesPath": "C:\\Users\\Raven BootCamp 13\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\Asynchronous\\obj\\",
+        "outputPath": "C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\Day7\\Asynchronous\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Raven BootCamp 13\\AppData\\Roaming\\NuGet\\NuGet.Config"
