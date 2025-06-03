@@ -35,13 +35,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2ndLogic", "Day6\2ndLogic\2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleShip", "BattleShip\BattleShip.csproj", "{546BDA91-63FE-40F2-B86A-983716E15831}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GC", "GC\GC.csproj", "{CBB10784-0A24-4E2A-BC6D-B6C831462176}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GC", "Day7\GC\GC.csproj", "{CBB10784-0A24-4E2A-BC6D-B6C831462176}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Threading", "Threading\Threading.csproj", "{B99BF384-828A-45B9-B668-C134F3227915}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Threading", "Day7\Threading\Threading.csproj", "{B99BF384-828A-45B9-B668-C134F3227915}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asynchronous", "Asynchronous\Asynchronous.csproj", "{2A3795DF-0ADE-4521-87B9-0D3494B4B6A6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asynchronous", "Day7\Asynchronous\Asynchronous.csproj", "{2A3795DF-0ADE-4521-87B9-0D3494B4B6A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task", "Task\Task.csproj", "{6646A7C9-2862-4BAA-A48D-D613BEF83167}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task", "Day7\Task\Task.csproj", "{6646A7C9-2862-4BAA-A48D-D613BEF83167}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FInalLogicTest", "FInalLogicTest\FInalLogicTest.csproj", "{99955020-4CAF-4F57-8203-32C2F55C1A07}"
 EndProject
