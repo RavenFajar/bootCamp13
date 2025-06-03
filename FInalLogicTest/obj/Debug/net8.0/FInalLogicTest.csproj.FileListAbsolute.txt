@@ -1,0 +1,15 @@
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\FInalLogicTest\bin\Debug\net8.0\FInalLogicTest.exe
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\FInalLogicTest\bin\Debug\net8.0\FInalLogicTest.deps.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\FInalLogicTest\bin\Debug\net8.0\FInalLogicTest.runtimeconfig.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\FInalLogicTest\bin\Debug\net8.0\FInalLogicTest.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\FInalLogicTest\bin\Debug\net8.0\FInalLogicTest.pdb
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\FInalLogicTest\obj\Debug\net8.0\FInalLogicTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\FInalLogicTest\obj\Debug\net8.0\FInalLogicTest.AssemblyInfoInputs.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\FInalLogicTest\obj\Debug\net8.0\FInalLogicTest.AssemblyInfo.cs
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\FInalLogicTest\obj\Debug\net8.0\FInalLogicTest.csproj.CoreCompileInputs.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\FInalLogicTest\obj\Debug\net8.0\FInalLogicTest.sourcelink.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\FInalLogicTest\obj\Debug\net8.0\FInalLogicTest.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\FInalLogicTest\obj\Debug\net8.0\refint\FInalLogicTest.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\FInalLogicTest\obj\Debug\net8.0\FInalLogicTest.pdb
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\FInalLogicTest\obj\Debug\net8.0\FInalLogicTest.genruntimeconfig.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\FInalLogicTest\obj\Debug\net8.0\ref\FInalLogicTest.dll
