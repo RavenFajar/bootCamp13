@@ -1,0 +1,15 @@
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\FIleStream\bin\Debug\net8.0\FIleStream.exe
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\FIleStream\bin\Debug\net8.0\FIleStream.deps.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\FIleStream\bin\Debug\net8.0\FIleStream.runtimeconfig.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\FIleStream\bin\Debug\net8.0\FIleStream.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\FIleStream\bin\Debug\net8.0\FIleStream.pdb
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\FIleStream\obj\Debug\net8.0\FIleStream.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\FIleStream\obj\Debug\net8.0\FIleStream.AssemblyInfoInputs.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\FIleStream\obj\Debug\net8.0\FIleStream.AssemblyInfo.cs
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\FIleStream\obj\Debug\net8.0\FIleStream.csproj.CoreCompileInputs.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\FIleStream\obj\Debug\net8.0\FIleStream.sourcelink.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\FIleStream\obj\Debug\net8.0\FIleStream.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\FIleStream\obj\Debug\net8.0\refint\FIleStream.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\FIleStream\obj\Debug\net8.0\FIleStream.pdb
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\FIleStream\obj\Debug\net8.0\FIleStream.genruntimeconfig.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\FIleStream\obj\Debug\net8.0\ref\FIleStream.dll

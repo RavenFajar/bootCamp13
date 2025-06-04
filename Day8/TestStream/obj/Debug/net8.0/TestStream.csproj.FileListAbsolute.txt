@@ -1,0 +1,15 @@
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\TestStream\bin\Debug\net8.0\TestStream.exe
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\TestStream\bin\Debug\net8.0\TestStream.deps.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\TestStream\bin\Debug\net8.0\TestStream.runtimeconfig.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\TestStream\bin\Debug\net8.0\TestStream.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\TestStream\bin\Debug\net8.0\TestStream.pdb
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\TestStream\obj\Debug\net8.0\TestStream.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\TestStream\obj\Debug\net8.0\TestStream.AssemblyInfoInputs.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\TestStream\obj\Debug\net8.0\TestStream.AssemblyInfo.cs
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\TestStream\obj\Debug\net8.0\TestStream.csproj.CoreCompileInputs.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\TestStream\obj\Debug\net8.0\TestStream.sourcelink.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\TestStream\obj\Debug\net8.0\TestStream.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\TestStream\obj\Debug\net8.0\refint\TestStream.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\TestStream\obj\Debug\net8.0\TestStream.pdb
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\TestStream\obj\Debug\net8.0\TestStream.genruntimeconfig.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\TestStream\obj\Debug\net8.0\ref\TestStream.dll
