@@ -222,10 +222,10 @@ public class GameController
     private bool _runGame;
 
     // Events
-    public event Action<IPlayer> OnInitializing;
-    public event Action<IPlayer, IShip> OnHit;
-    public event Action<List<IPlayer>> OnChangingTurn;
-    public event Action OnEndingGame;
+    public event Action<IPlayer>? OnInitializing;
+    public event Action<IPlayer, IShip>? OnHit;
+    public event Action<List<IPlayer>>? OnChangingTurn;
+    public event Action? OnEndingGame;
 
     public GameController(List<IPlayer> players)
     {
@@ -337,7 +337,7 @@ public class GameController
                 display.ShowBoard(board);
                 display.ShowShipPlacementInfo(ship);
 
-                string input = Console.ReadLine()?.ToUpper();
+                string input = (Console.ReadLine() ?? string.Empty).ToUpper();
 
                 if (input == "R")
                 {
@@ -353,7 +353,7 @@ public class GameController
                 }
 
                 // Try to parse coordinates
-                string[] coords = input?.Split(' ');
+                string[] coords = (input?.Split(' ')) ?? Array.Empty<string>();
                 if (coords?.Length == 2 && int.TryParse(coords[0], out int x) && int.TryParse(coords[1], out int y))
                 {
                     var coordinate = new Coordinate(x, y);
@@ -473,7 +473,7 @@ public class GameController
         board.Tiles[coordinate.AxisX, coordinate.AxisY] = tile;
     }
 
-    public IShip GetShip(IPlayer player, Coordinate coordinate)
+    public IShip? GetShip(IPlayer player, Coordinate coordinate)
     {
         if (!_playerShips.ContainsKey(player)) return null;
         
@@ -542,8 +542,8 @@ public class GameController
         
         Console.WriteLine($"\nEnter coordinates to attack (x y):");
         
-        string input = Console.ReadLine();
-        string[] coords = input?.Split(' ');
+        string input = Console.ReadLine() ?? "";
+        string[] coords = input?.Split(' ') ?? Array.Empty<string>();
         
         if (coords?.Length == 2 && int.TryParse(coords[0], out int x) && int.TryParse(coords[1], out int y))
         {
@@ -554,7 +554,22 @@ public class GameController
             Console.WriteLine("Invalid input! Please enter coordinates as 'x y'");
             Console.WriteLine("Press any key to try again...");
             Console.ReadKey();
-            LaunchHit(player, display); // Retry
+            while (true)
+            {
+                Console.WriteLine("Invalid input! Please enter coordinates as 'x y':");
+                input = Console.ReadLine() ?? "";
+                coords = input?.Split(' ') ?? Array.Empty<string>();
+
+                if (coords?.Length == 2 && int.TryParse(coords[0], out x) && int.TryParse(coords[1], out y))
+                {
+                    Hit(player, new Coordinate(x, y));
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input! Try again.");
+                }
+            }
         }
         
         Console.WriteLine("Press any key to continue...");
@@ -700,11 +715,21 @@ public class Program
         
         // Get player names
         Console.Write("Enter Player 1 name: ");
-        string player1Name = Console.ReadLine();
+        string player1Name;
+        do
+        {
+            Console.Write("Enter Player 1 name (cannot be empty): ");
+            player1Name = Console.ReadLine() ?? "";
+        } while (string.IsNullOrWhiteSpace(player1Name));
         if (string.IsNullOrWhiteSpace(player1Name)) player1Name = "Player 1";
         
         Console.Write("Enter Player 2 name: ");
-        string player2Name = Console.ReadLine();
+        string player2Name;
+        do
+        {
+            Console.Write("Enter Player 2 name (cannot be empty): ");
+            player2Name = Console.ReadLine() ?? "";
+        } while (string.IsNullOrWhiteSpace(player2Name));
         if (string.IsNullOrWhiteSpace(player2Name)) player2Name = "Player 2";
         
         // Create players
