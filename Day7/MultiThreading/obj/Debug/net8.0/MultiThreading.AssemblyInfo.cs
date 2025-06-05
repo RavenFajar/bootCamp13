@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MultiThreading")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+118254188433b0e0b2f732d9eb495cfa04660e52")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c57fcb41d242634111ea36193acefe140425f8b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("MultiThreading")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MultiThreading")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
