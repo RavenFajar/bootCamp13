@@ -172,13 +172,13 @@ public class Display : IDisplay
         
         for (int i = 0; i < board.Size; i++)
         {
-            Console.Write(i.ToString().PadLeft(2) + " ");
+            Console.Write(i.ToString().PadLeft(2) + "  ");
             for (int j = 0; j < board.Size; j++)
             {
                 char symbol = board.Tiles[i, j] switch
                 {
                     Tile.Empty => '~',
-                    Tile.Ship => '~', // Hide ships from enemy view
+                    Tile.Ship => '~', 
                     Tile.Hit => 'X',
                     Tile.Miss => 'O',
                     Tile.SunkenShip => '#',

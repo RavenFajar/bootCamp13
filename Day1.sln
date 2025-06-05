@@ -63,8 +63,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoStreamIO", "Day8\Demo\D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OCamera", "OCamera", "{115A20F4-3D9F-43EF-A445-B941E7C6EBCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingStreamIO", "Day8\OCamera\TestingStreamIO\TestingStreamIO.csproj", "{FA001F74-DDAD-42AA-9D2A-56E030C71D40}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestStream", "Day8\TestStream\TestStream.csproj", "{BC21F999-778D-45C0-A349-57786BAD0FD9}"
 EndProject
 Global
