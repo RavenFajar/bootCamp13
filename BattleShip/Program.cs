@@ -29,18 +29,6 @@ public struct Coordinate
         AxisY = y;
     }
 
-    public override bool Equals(object obj)
-    {
-        return obj is Coordinate coordinate &&
-               AxisX == coordinate.AxisX &&
-               AxisY == coordinate.AxisY;
-    }
-
-    public override int GetHashCode()
-    {
-        return HashCode.Combine(AxisX, AxisY);
-    }
-
     public override string ToString()
     {
         return $"({AxisX}, {AxisY})";
