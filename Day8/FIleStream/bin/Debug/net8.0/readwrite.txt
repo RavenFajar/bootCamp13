@@ -1,0 +1,2 @@
+daydubsnidasidjnasduabsdmasidb djsko
+Hello, this is a sample string to store in a text file.

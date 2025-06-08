@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Raven BootCamp 13\\source\\repos\\EmployeeAdmin\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6D5AC2C0-097C-4E35-9CF5-02539D6DF6EE}|EmployeeAdmin\\EmployeeAdmin.csproj|c:\\users\\raven bootcamp 13\\source\\repos\\employeeadmin\\employeeadmin\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D5AC2C0-097C-4E35-9CF5-02539D6DF6EE}|EmployeeAdmin\\EmployeeAdmin.csproj|solutionrelative:employeeadmin\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D5AC2C0-097C-4E35-9CF5-02539D6DF6EE}|EmployeeAdmin\\EmployeeAdmin.csproj|c:\\users\\raven bootcamp 13\\source\\repos\\employeeadmin\\employeeadmin\\models\\updateemployeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D5AC2C0-097C-4E35-9CF5-02539D6DF6EE}|EmployeeAdmin\\EmployeeAdmin.csproj|solutionrelative:employeeadmin\\models\\updateemployeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D5AC2C0-097C-4E35-9CF5-02539D6DF6EE}|EmployeeAdmin\\EmployeeAdmin.csproj|c:\\users\\raven bootcamp 13\\source\\repos\\employeeadmin\\employeeadmin\\models\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D5AC2C0-097C-4E35-9CF5-02539D6DF6EE}|EmployeeAdmin\\EmployeeAdmin.csproj|solutionrelative:employeeadmin\\models\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UpdateEmployeeDto.cs",
+              "DocumentMoniker": "C:\\Users\\Raven BootCamp 13\\source\\repos\\EmployeeAdmin\\EmployeeAdmin\\Models\\UpdateEmployeeDto.cs",
+              "RelativeDocumentMoniker": "EmployeeAdmin\\Models\\UpdateEmployeeDto.cs",
+              "ToolTip": "C:\\Users\\Raven BootCamp 13\\source\\repos\\EmployeeAdmin\\EmployeeAdmin\\Models\\UpdateEmployeeDto.cs",
+              "RelativeToolTip": "EmployeeAdmin\\Models\\UpdateEmployeeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-05T06:46:02.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\Raven BootCamp 13\\source\\repos\\EmployeeAdmin\\EmployeeAdmin\\Models\\Entities\\Employee.cs",
+              "RelativeDocumentMoniker": "EmployeeAdmin\\Models\\Entities\\Employee.cs",
+              "ToolTip": "C:\\Users\\Raven BootCamp 13\\source\\repos\\EmployeeAdmin\\EmployeeAdmin\\Models\\Entities\\Employee.cs",
+              "RelativeToolTip": "EmployeeAdmin\\Models\\Entities\\Employee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-05T04:43:11.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmployeesController.cs",
+              "DocumentMoniker": "C:\\Users\\Raven BootCamp 13\\source\\repos\\EmployeeAdmin\\EmployeeAdmin\\Controllers\\EmployeesController.cs",
+              "RelativeDocumentMoniker": "EmployeeAdmin\\Controllers\\EmployeesController.cs",
+              "ToolTip": "C:\\Users\\Raven BootCamp 13\\source\\repos\\EmployeeAdmin\\EmployeeAdmin\\Controllers\\EmployeesController.cs",
+              "RelativeToolTip": "EmployeeAdmin\\Controllers\\EmployeesController.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAuwEUAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-05T03:52:07.807Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

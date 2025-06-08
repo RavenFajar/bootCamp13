@@ -1,0 +1,15 @@
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\Demo\DemoStreamIO\bin\Debug\net8.0\DemoStreamIO.exe
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\Demo\DemoStreamIO\bin\Debug\net8.0\DemoStreamIO.deps.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\Demo\DemoStreamIO\bin\Debug\net8.0\DemoStreamIO.runtimeconfig.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\Demo\DemoStreamIO\bin\Debug\net8.0\DemoStreamIO.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\Demo\DemoStreamIO\bin\Debug\net8.0\DemoStreamIO.pdb
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\Demo\DemoStreamIO\obj\Debug\net8.0\DemoStreamIO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\Demo\DemoStreamIO\obj\Debug\net8.0\DemoStreamIO.AssemblyInfoInputs.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\Demo\DemoStreamIO\obj\Debug\net8.0\DemoStreamIO.AssemblyInfo.cs
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\Demo\DemoStreamIO\obj\Debug\net8.0\DemoStreamIO.csproj.CoreCompileInputs.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\Demo\DemoStreamIO\obj\Debug\net8.0\DemoStreamIO.sourcelink.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\Demo\DemoStreamIO\obj\Debug\net8.0\DemoStreamIO.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\Demo\DemoStreamIO\obj\Debug\net8.0\refint\DemoStreamIO.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\Demo\DemoStreamIO\obj\Debug\net8.0\DemoStreamIO.pdb
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\Demo\DemoStreamIO\obj\Debug\net8.0\DemoStreamIO.genruntimeconfig.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day8\Demo\DemoStreamIO\obj\Debug\net8.0\ref\DemoStreamIO.dll
