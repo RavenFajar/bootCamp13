@@ -20,11 +20,8 @@ public class GameController
         _playerShips = new Dictionary<IPlayer, List<IShip>>();
         _runGame = false;
         
-        if (players.Count >= 2)
-        {
-            _currentPlayer = players[0];
-            _otherPlayer = players[1];
-        }
+        _currentPlayer = players[0];
+        _otherPlayer = players[1];
     }
 
     // INITIALIZATION
@@ -101,9 +98,6 @@ public class GameController
     public void SetupPlayerShips(IPlayer player, IDisplay display)
     {
         if (!_playerShips.ContainsKey(player)) return;
-
-        Console.Clear();
-        Console.WriteLine($"\n=== {player.Name} - Ship Placement Phase ===");
         
         var ships = _playerShips[player];
         var board = _playerBoards[player];
@@ -114,9 +108,7 @@ public class GameController
             
             while (!shipPlaced)
             {
-                Console.Clear();
-                Console.WriteLine($"\n=== {player.Name} - Ship Placement Phase ===");
-                Console.WriteLine("\nYour current board:");
+                display.ShipPlacementPhase(player);
                 display.ShowBoard(board);
                 display.ShowShipPlacementInfo(ship);
 
@@ -140,32 +132,25 @@ public class GameController
                 if (coords?.Length == 2 && int.TryParse(coords[0], out int x) && int.TryParse(coords[1], out int y))
                 {
                     var coordinate = new Coordinate(x, y);
-                    
+
                     if (CanPlaceShip(player, ship, coordinate))
                     {
                         PlaceShipOnBoard(player, ship, coordinate);
                         shipPlaced = true;
-                        Console.WriteLine($"{ship.Type} placed successfully!");
+                        display.PlacementSuccess(ship);
                     }
                     else
                     {
-                        Console.WriteLine("Cannot place ship here! Press any key to continue...");
-                        Console.ReadKey();
+                        display.InvalidShipPlacement();
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Invalid input! Press any key to continue...");
-                    Console.ReadKey();
+                    display.InvalidFormat();
                 }
             }
         }
-
-        Console.Clear();
-        Console.WriteLine($"\n=== {player.Name} - Final Board ===");
-        display.ShowBoard(board);
-        Console.WriteLine("Ship placement complete! Press any key to continue...");
-        Console.ReadKey();
+        display.FinalShipPlacement(player, board);
     }
 
     private void ClearAllShips(IPlayer player)
@@ -302,20 +287,11 @@ public class GameController
     public void LaunchHit(IPlayer player, IDisplay display)
     {
         while(true){
-        Console.Clear();
-        Console.WriteLine($"\n=== {player.Name}'s Turn ===");
-        
-        var targetPlayer = GetOtherPlayer();
-        var targetBoard = _playerBoards[targetPlayer];
-        
-        Console.WriteLine($"Attacking {targetPlayer.Name}'s fleet:");
-        display.ShowAttackBoard(targetBoard);
-        
-        Console.WriteLine("\nYour fleet status:");
-        display.ShowFleet(_playerShips[player]);
-        
-            Console.WriteLine($"\nEnter coordinates to attack (x y):");
-            
+            var targetPlayer = GetOtherPlayer();
+            var targetBoard = _playerBoards[targetPlayer];
+
+            display.AttackPhase(player, targetPlayer, _playerShips, targetBoard);
+
             string input = Console.ReadLine() ?? "";
             string[] coords = input?.Split(' ') ?? Array.Empty<string>();
             if (coords?.Length == 2 && int.TryParse(coords[0], out int x) && int.TryParse(coords[1], out int y))
@@ -323,23 +299,17 @@ public class GameController
                 Coordinate coordinate = new Coordinate(x, y);
 
                 if (!IsValidPlacement(targetPlayer, coordinate)){
-                    Console.WriteLine("Coordinates are out of bounds! Try again.");
-                    Console.WriteLine("Press any key to try again...");
-                    Console.ReadKey();
+                    display.OutOfBounds();
                     continue;
                 }
                 if (IsHit(targetPlayer, coordinate))
                 {
-                    Console.WriteLine("You've already attacked this tile! Try another.");
-                    Console.WriteLine("Press any key to try again...");
-                    Console.ReadKey();
+                    display.AlreadyAttack();
                     continue;
                 }
                 if (!IsValidHit(player, coordinate))
                 {
-                    Console.WriteLine("Invalid target! Try again.");
-                    Console.WriteLine("Press any key to try again...");
-                    Console.ReadKey();
+                    display.InvalidAttack();
                     continue;
                 }else
                 {
@@ -348,8 +318,7 @@ public class GameController
                 }
             }
         }
-        Console.WriteLine("Press any key to continue...");
-        Console.ReadKey();
+        display.NextPhase();
 
     }
 
