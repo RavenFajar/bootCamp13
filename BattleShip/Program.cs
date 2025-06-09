@@ -29,18 +29,6 @@ public struct Coordinate
         AxisY = y;
     }
 
-    public override bool Equals(object obj)
-    {
-        return obj is Coordinate coordinate &&
-               AxisX == coordinate.AxisX &&
-               AxisY == coordinate.AxisY;
-    }
-
-    public override int GetHashCode()
-    {
-        return HashCode.Combine(AxisX, AxisY);
-    }
-
     public override string ToString()
     {
         return $"({AxisX}, {AxisY})";
@@ -528,6 +516,7 @@ public class GameController
 
     public void LaunchHit(IPlayer player, IDisplay display)
     {
+        while(true){
         Console.Clear();
         Console.WriteLine($"\n=== {player.Name}'s Turn ===");
         
@@ -540,50 +529,47 @@ public class GameController
         Console.WriteLine("\nYour fleet status:");
         display.ShowFleet(_playerShips[player]);
         
-        Console.WriteLine($"\nEnter coordinates to attack (x y):");
-        
-        string input = Console.ReadLine() ?? "";
-        string[] coords = input?.Split(' ') ?? Array.Empty<string>();
-        
-        if (coords?.Length == 2 && int.TryParse(coords[0], out int x) && int.TryParse(coords[1], out int y))
-        {
-            Hit(player, new Coordinate(x, y));
-        }
-        else
-        {
-            Console.WriteLine("Invalid input! Please enter coordinates as 'x y'");
-            Console.WriteLine("Press any key to try again...");
-            Console.ReadKey();
-            while (true)
+            Console.WriteLine($"\nEnter coordinates to attack (x y):");
+            
+            string input = Console.ReadLine() ?? "";
+            string[] coords = input?.Split(' ') ?? Array.Empty<string>();
+            if (coords?.Length == 2 && int.TryParse(coords[0], out int x) && int.TryParse(coords[1], out int y))
             {
-                Console.WriteLine("Invalid input! Please enter coordinates as 'x y':");
-                input = Console.ReadLine() ?? "";
-                coords = input?.Split(' ') ?? Array.Empty<string>();
+                Coordinate coordinate = new Coordinate(x, y);
 
-                if (coords?.Length == 2 && int.TryParse(coords[0], out x) && int.TryParse(coords[1], out y))
+                if (!IsValidPlacement(targetPlayer, coordinate)){
+                    Console.WriteLine("Coordinates are out of bounds! Try again.");
+                    Console.WriteLine("Press any key to try again...");
+                    Console.ReadKey();
+                    continue;
+                }
+                if (IsHit(targetPlayer, coordinate))
+                {
+                    Console.WriteLine("You've already attacked this tile! Try another.");
+                    Console.WriteLine("Press any key to try again...");
+                    Console.ReadKey();
+                    continue;
+                }
+                if (!IsValidHit(player, coordinate))
+                {
+                    Console.WriteLine("Invalid target! Try again.");
+                    Console.WriteLine("Press any key to try again...");
+                    Console.ReadKey();
+                    continue;
+                }else
                 {
                     Hit(player, new Coordinate(x, y));
                     break;
                 }
-                else
-                {
-                    Console.WriteLine("Invalid input! Try again.");
-                }
             }
         }
-        
         Console.WriteLine("Press any key to continue...");
         Console.ReadKey();
+
     }
 
     public void Hit(IPlayer player, Coordinate coordinate)
-    {
-        if (!IsValidHit(player, coordinate))
-        {
-            Console.WriteLine("Invalid target! Try again.");
-            return;
-        }
-        
+    {        
         RegisterHit(player, coordinate);
     }
 
@@ -642,7 +628,7 @@ public class GameController
     public bool IsHit(IPlayer player, Coordinate coordinate)
     {
         var tile = GetTile(player, coordinate);
-        return tile == Tile.Hit || tile == Tile.SunkenShip;
+        return tile == Tile.Hit || tile == Tile.Miss || tile == Tile.SunkenShip;
     }
 
     public bool IsSunk(IShip ship)
