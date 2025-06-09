@@ -21,3 +21,10 @@ C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\BattleShip\obj\Deb
 C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\BattleShip\obj\Debug\net8.0\BattleShip.dll
 C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\BattleShip\obj\Debug\net8.0\refint\BattleShip.dll
 C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\BattleShip\obj\Debug\net8.0\BattleShip.pdb
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\BattleShip\bin\Debug\net8.0\BattleShip.exe
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\BattleShip\bin\Debug\net8.0\BattleShip.deps.json
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\BattleShip\bin\Debug\net8.0\BattleShip.runtimeconfig.json
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\BattleShip\bin\Debug\net8.0\BattleShip.dll
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\BattleShip\bin\Debug\net8.0\BattleShip.pdb
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\BattleShip\obj\Debug\net8.0\BattleShip.genruntimeconfig.cache
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\BattleShip\obj\Debug\net8.0\ref\BattleShip.dll

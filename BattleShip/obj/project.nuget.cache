@@ -4,5 +4,15 @@
   "success": true,
   "projectFilePath": "C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\BattleShip\\BattleShip.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "message": "Problem reading the cache file C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\BattleShip\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0.",
+      "projectPath": "C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\BattleShip\\BattleShip.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\BattleShip\\BattleShip.csproj",
+      "targetGraphs": []
+    }
+  ]
 }

@@ -229,10 +229,7 @@ public class GameController
         }
     }
 
-    // ===============================
     // INITIALIZATION
-    // ===============================
-
     public void Setup()
     {
         foreach (var player in _players)
@@ -431,12 +428,6 @@ public class GameController
         }
     }
 
-
-
-    // ===============================
-    // GETTERS AND SETTERS
-    // ===============================
-
     public Tile GetTile(IPlayer player, Coordinate coordinate)
     {
         if (!_playerBoards.ContainsKey(player)) return Tile.Empty;
@@ -491,11 +482,7 @@ public class GameController
     {
         return _otherPlayer;
     }
-
-    // ===============================
     // GAME FLOW
-    // ===============================
-
     public void Start(IDisplay display)
     {
         _runGame = true;
@@ -604,10 +591,6 @@ public class GameController
         }
     }
 
-    // ===============================
-    // CHECKS
-    // ===============================
-
     public bool IsValidPlacement(IPlayer player, Coordinate coordinate)
     {
         if (!_playerBoards.ContainsKey(player)) return false;
@@ -640,10 +623,7 @@ public class GameController
     {
         return fleet != null && fleet.All(ship => IsSunk(ship));
     }
-
-    // ===============================
     // ACTIONS
-    // ===============================
 
     public void ChangeTurn(List<IPlayer> players)
     {
