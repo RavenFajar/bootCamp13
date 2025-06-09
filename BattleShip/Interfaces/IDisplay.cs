@@ -6,7 +6,7 @@ public interface IDisplay
     void ShowAttackBoard(IBoard board);
     void ShowFleet(List<IShip> ships);
     public void ShipPlacementPhase(IPlayer player);
-    void ShowShipPlacementInfo(IShip ship);
+    void ShowShipPlacementInfo(Ship ship);
     public void FinalShipPlacement(IPlayer player, IBoard board);
     public void InvalidShipPlacement();
     public void InvalidFormat();
@@ -16,4 +16,6 @@ public interface IDisplay
     public void InvalidAttack();
     public void AlreadyAttack();
     public void NextPhase();
+    public void ShipSunk(IShip ship);
+
 }

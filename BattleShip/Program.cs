@@ -64,13 +64,14 @@ public class Program
         };
         
         // Create game controller
-        var game = new GameController(players);
+        var game = new GameController(players, display);
         
         // Setup event handlers
         game.OnInitializing += (player) => Console.WriteLine($"Initializing {player.Name}...");
         game.OnHit += (player, ship) => Console.WriteLine($"{ship.Type} hit!");
         game.OnChangingTurn += (players) => Console.WriteLine("Turn changed!");
         game.OnEndingGame += () => {
+            Console.Clear();
             Console.WriteLine("Thanks for playing!");
             Console.WriteLine("Press any key to return to main menu...");
             Console.ReadKey();
@@ -92,6 +93,6 @@ public class Program
         Console.ReadKey();
         
         // Start the game
-        game.Start(display);
+        game.Start();
     }
 }

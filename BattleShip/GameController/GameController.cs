@@ -1,27 +1,28 @@
 public class GameController
-{   
+{
     private List<IPlayer> _players;
     private Dictionary<IPlayer, IBoard> _playerBoards;
     private Dictionary<IPlayer, List<IShip>> _playerShips;
     private IPlayer _currentPlayer;
     private IPlayer _otherPlayer;
+    private readonly IDisplay _display;
     private bool _runGame;
 
     // Events
-    public  Action<IPlayer>? OnInitializing;
-    public  Action<IPlayer, IShip>? OnHit;
-    public  Action<List<IPlayer>>? OnChangingTurn;
-    public  Action? OnEndingGame;
+    public Action<IPlayer>? OnInitializing;
+    public Action<IPlayer, IShip>? OnHit;
+    public Action<List<IPlayer>>? OnChangingTurn;
+    public Action? OnEndingGame;
 
-    public GameController(List<IPlayer> players)
+    public GameController(List<IPlayer> players, IDisplay display)
     {
         _players = players;
         _playerBoards = new Dictionary<IPlayer, IBoard>();
         _playerShips = new Dictionary<IPlayer, List<IShip>>();
         _runGame = false;
-        
         _currentPlayer = players[0];
         _otherPlayer = players[1];
+        _display = display;
     }
 
     // INITIALIZATION
@@ -36,16 +37,16 @@ public class GameController
 
     public bool SetBoard(IPlayer player, IBoard board)
     {
-        if (player == null || board == null) return false;
-        
+        if (player == null || board == null)
+            return false;
         _playerBoards[player] = board;
         return true;
     }
 
     public bool SetShips(IPlayer player, List<IShip> ships)
     {
-        if (player == null || ships == null) return false;
-        
+        if (player == null || ships == null)
+            return false;
         _playerShips[player] = ships;
         return true;
     }
@@ -67,7 +68,7 @@ public class GameController
                 new Ship(4, Orientation.Horizontal, "Battleship"),
                 new Ship(3, Orientation.Horizontal, "Cruiser"),
                 new Ship(3, Orientation.Horizontal, "Submarine"),
-                new Ship(2, Orientation.Horizontal, "Destroyer")
+                new Ship(2, Orientation.Horizontal, "Destroyer"),
             };
             SetShips(player, defaultFleet);
         }
@@ -75,24 +76,34 @@ public class GameController
 
     public Orientation RotateShip(Orientation orientation)
     {
-        return orientation == Orientation.Horizontal ? Orientation.Vertical : Orientation.Horizontal;
+        return orientation == Orientation.Horizontal
+            ? Orientation.Vertical
+            : Orientation.Horizontal;
     }
 
     public bool PlaceShip(IShip ship, Coordinate coordinate)
     {
-        if (ship == null) return false;
+        if (ship == null)
+            return false;
 
-        ship.Coordinates.Clear();
-        
-        for (int i = 0; i < ship.Length; i++)
+        if (ship is Ship concreteShip)
         {
-            int x = ship.Orientation == Orientation.Horizontal ? coordinate.AxisX + i : coordinate.AxisX;
-            int y = ship.Orientation == Orientation.Vertical ? coordinate.AxisY + i : coordinate.AxisY;
+            concreteShip.Coordinates.Clear();
+            for (int i = 0; i < ship.Length; i++)
+            {
+                int x =
+                    concreteShip.Orientation == Orientation.Horizontal
+                        ? coordinate.AxisX + i
+                        : coordinate.AxisX;
+                int y =
+                    concreteShip.Orientation == Orientation.Vertical ? coordinate.AxisY + i : coordinate.AxisY;
+                
+                concreteShip.Coordinates.Add(new Coordinate(x, y));
+            }
             
-            ship.Coordinates.Add(new Coordinate(x, y));
+            return true;
         }
-        
-        return true;
+        return false;
     }
     
     public void SetupPlayerShips(IPlayer player, IDisplay display)
@@ -103,20 +114,24 @@ public class GameController
         var board = _playerBoards[player];
 
         foreach (var ship in ships)
-        {
+        {   
+
+            if (ship is not Ship concreteShip) continue;
+            
             bool shipPlaced = false;
             
             while (!shipPlaced)
             {
+
                 display.ShipPlacementPhase(player);
                 display.ShowBoard(board);
-                display.ShowShipPlacementInfo(ship);
+                display.ShowShipPlacementInfo(concreteShip);
 
                 string input = (Console.ReadLine() ?? string.Empty).ToUpper();
 
                 if (input == "R")
                 {
-                    ship.Orientation = RotateShip(ship.Orientation);
+                    concreteShip.Orientation = RotateShip(concreteShip.Orientation);
                     continue;
                 }
                 else if (input == "C")
@@ -133,11 +148,11 @@ public class GameController
                 {
                     var coordinate = new Coordinate(x, y);
 
-                    if (CanPlaceShip(player, ship, coordinate))
+                    if (CanPlaceShip(player, concreteShip, coordinate))
                     {
-                        PlaceShipOnBoard(player, ship, coordinate);
+                        PlaceShipOnBoard(player, concreteShip, coordinate);
                         shipPlaced = true;
-                        display.PlacementSuccess(ship);
+                        display.PlacementSuccess(concreteShip);
                     }
                     else
                     {
@@ -181,12 +196,13 @@ public class GameController
     private bool CanPlaceShip(IPlayer player, IShip ship, Coordinate coordinate)
     {
         var board = _playerBoards[player];
-        
+         if (ship is Ship concreteShip)
+        {
         // Check if ship fits within board bounds
         for (int i = 0; i < ship.Length; i++)
         {
-            int x = ship.Orientation == Orientation.Horizontal ? coordinate.AxisX + i : coordinate.AxisX;
-            int y = ship.Orientation == Orientation.Vertical ? coordinate.AxisY + i : coordinate.AxisY;
+            int x = concreteShip.Orientation == Orientation.Horizontal ? coordinate.AxisX + i : coordinate.AxisX;
+            int y = concreteShip.Orientation == Orientation.Vertical ? coordinate.AxisY + i : coordinate.AxisY;
             
             // Check bounds
             if (x < 0 || x >= board.Size || y < 0 || y >= board.Size)
@@ -198,6 +214,8 @@ public class GameController
         }
         
         return true;
+        }
+        return false;
     }
 
     private void PlaceShipOnBoard(IPlayer player, IShip ship, Coordinate coordinate)
@@ -256,23 +274,18 @@ public class GameController
         }
     }
 
-    public IPlayer GetCurrentPlayer()
-    {
-        return _currentPlayer;
-    }
-
     public IPlayer GetOtherPlayer()
     {
         return _otherPlayer;
     }
     // GAME FLOW
-    public void Start(IDisplay display)
+    public void Start()
     {
         _runGame = true;
         
         while (_runGame)
         {
-            LaunchHit(_currentPlayer, display);
+            LaunchHit(_currentPlayer);
             
             if (IsFleetDestroyed(_playerShips[_otherPlayer]))
             {
@@ -284,13 +297,13 @@ public class GameController
         }
     }
 
-    public void LaunchHit(IPlayer player, IDisplay display)
+    public void LaunchHit(IPlayer player)
     {
         while(true){
             var targetPlayer = GetOtherPlayer();
             var targetBoard = _playerBoards[targetPlayer];
 
-            display.AttackPhase(player, targetPlayer, _playerShips, targetBoard);
+            _display.AttackPhase(player, targetPlayer, _playerShips, targetBoard);
 
             string input = Console.ReadLine() ?? "";
             string[] coords = input?.Split(' ') ?? Array.Empty<string>();
@@ -299,17 +312,17 @@ public class GameController
                 Coordinate coordinate = new Coordinate(x, y);
 
                 if (!IsValidPlacement(targetPlayer, coordinate)){
-                    display.OutOfBounds();
+                    _display.OutOfBounds();
                     continue;
                 }
                 if (IsHit(targetPlayer, coordinate))
                 {
-                    display.AlreadyAttack();
+                    _display.AlreadyAttack();
                     continue;
                 }
                 if (!IsValidHit(player, coordinate))
                 {
-                    display.InvalidAttack();
+                    _display.InvalidAttack();
                     continue;
                 }else
                 {
@@ -318,7 +331,7 @@ public class GameController
                 }
             }
         }
-        display.NextPhase();
+        _display.NextPhase();
 
     }
 
@@ -337,13 +350,11 @@ public class GameController
             SetHitShip(ship);
             SetTile(targetPlayer, coordinate, Tile.Hit);
             
-            Console.WriteLine("HIT!");
             OnHit?.Invoke(targetPlayer, ship);
             
             if (IsSunk(ship))
             {
-                Console.WriteLine($"{ship.Type} has been sunk!");
-                
+                _display.ShipSunk(ship);
                 // Mark all ship coordinates as sunken
                 foreach (var coord in ship.Coordinates)
                 {
@@ -354,7 +365,7 @@ public class GameController
         else
         {
             SetTile(targetPlayer, coordinate, Tile.Miss);
-            Console.WriteLine("MISS!");
+            _display.ShowMessage("Miss");
         }
     }
 

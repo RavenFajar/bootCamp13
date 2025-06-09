@@ -11,7 +11,6 @@ public class Display : IDisplay
     public void ShowMessage(string message)
     {
         Console.WriteLine(message);
-        Console.ReadKey();
     }
 
     public void ShowBoard(IBoard board)
@@ -77,7 +76,7 @@ public class Display : IDisplay
         Console.WriteLine($"\n=== {player.Name} - Ship Placement Phase ===");
         Console.WriteLine("\nYour current board:");
     }
-    public void ShowShipPlacementInfo(IShip ship)
+    public void ShowShipPlacementInfo(Ship ship)
     {
         Console.WriteLine($"\nPlacing {ship.Type} (Length: {ship.Length})");
         Console.WriteLine($"Current orientation: {ship.Orientation}");
@@ -146,5 +145,11 @@ public class Display : IDisplay
     {
         Console.WriteLine("Press any key to proceed to the next phase...");
         Console.ReadKey();
+    }
+
+    public void ShipSunk(IShip ship)
+    {
+        Console.WriteLine($"The {ship.Type} has been sunk!");
+        NextPhase();
     }
 }
