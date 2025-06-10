@@ -150,7 +150,6 @@ public class Display : IDisplay
     public void ShipSunk(IShip ship)
     {
         Console.WriteLine($"The {ship.Type} has been sunk!");
-        NextPhase();
     }
     public void GameOver(IPlayer _currentPlayer)
     { 

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Raven Fajar\\Documents\\FormulatrixBootCamp\\bootCamp13\\BattleShip\\BattleShip.csproj": {}
+    "C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\BattleShip\\BattleShip.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Raven Fajar\\Documents\\FormulatrixBootCamp\\bootCamp13\\BattleShip\\BattleShip.csproj": {
+    "C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\BattleShip\\BattleShip.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Raven Fajar\\Documents\\FormulatrixBootCamp\\bootCamp13\\BattleShip\\BattleShip.csproj",
+        "projectUniqueName": "C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\BattleShip\\BattleShip.csproj",
         "projectName": "BattleShip",
-        "projectPath": "C:\\Users\\Raven Fajar\\Documents\\FormulatrixBootCamp\\bootCamp13\\BattleShip\\BattleShip.csproj",
-        "packagesPath": "C:\\Users\\Raven Fajar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Raven Fajar\\Documents\\FormulatrixBootCamp\\bootCamp13\\BattleShip\\obj\\",
+        "projectPath": "C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\BattleShip\\BattleShip.csproj",
+        "packagesPath": "C:\\Users\\Raven BootCamp 13\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\BattleShip\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Raven Fajar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Raven BootCamp 13\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
