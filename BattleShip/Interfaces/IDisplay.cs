@@ -17,5 +17,6 @@ public interface IDisplay
     public void AlreadyAttack();
     public void NextPhase();
     public void ShipSunk(IShip ship);
+    public void GameOver(IPlayer player);
 
 }

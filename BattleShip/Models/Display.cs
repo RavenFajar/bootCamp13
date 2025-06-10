@@ -152,4 +152,8 @@ public class Display : IDisplay
         Console.WriteLine($"The {ship.Type} has been sunk!");
         NextPhase();
     }
+    public void GameOver(IPlayer _currentPlayer)
+    { 
+        Console.WriteLine($"\nGame Over! {_currentPlayer.Name} wins!");
+    }
 }

@@ -415,7 +415,7 @@ public class GameController
     public void EndGame()
     {
         _runGame = false;
-        Console.WriteLine($"\nGame Over! {_currentPlayer.Name} wins!");
+        _display.GameOver(_currentPlayer);
         OnEndingGame?.Invoke();
     }
 }
