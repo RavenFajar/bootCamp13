@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BattleShip")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5a3a12c76cf5810171577cec93adb22ce892b71e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b61450f073bdb69a1f4645498c1aa83d3ee9bb39")]
 [assembly: System.Reflection.AssemblyProductAttribute("BattleShip")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BattleShip")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

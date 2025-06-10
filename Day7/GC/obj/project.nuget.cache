@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ENKzrvpW/vw=",
+  "dgSpecHash": "cELCtlJSBJ8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\GC\\GC.csproj",
+  "projectFilePath": "C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\Day7\\GC\\GC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Raven BootCamp 13\\.nuget\\packages\\system.configuration.configurationmanager\\9.0.5\\system.configuration.configurationmanager.9.0.5.nupkg.sha512",
     "C:\\Users\\Raven BootCamp 13\\.nuget\\packages\\system.diagnostics.eventlog\\9.0.5\\system.diagnostics.eventlog.9.0.5.nupkg.sha512",
