@@ -1,0 +1,39 @@
+@{
+}
+@model List<StudentPortal.Models.Entities.Student>
+
+<h2>All Student</h2>
+<a class="btn btn-success mb-3" asp-controller="Students" asp-action="Add">Create New Student</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Is Active</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.Name</td>
+                <td>@student.Email</td>
+                <td>@student.PhoneNumber</td>
+                <td>@(student.IsActive ? "Yes" : "No")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@student.Id" class="btn btn-primary">Edit</a>
+                    <form method="post" 
+                        asp-controller="Students" 
+                        asp-action="Delete" 
+                        asp-route-id="@student.Id">
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                    </form>                
+                </td>
+            </tr>
+        }
+    </tbody>
