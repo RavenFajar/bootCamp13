@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OCamera")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b61450f073bdb69a1f4645498c1aa83d3ee9bb39")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6df9304410aeb53fdcfb33babfca73474f1aecdd")]
 [assembly: System.Reflection.AssemblyProductAttribute("OCamera")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OCamera")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

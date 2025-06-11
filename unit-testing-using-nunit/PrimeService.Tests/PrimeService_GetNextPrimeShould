@@ -1,0 +1,63 @@
+using NUnit.Framework;
+
+namespace PrimeService.Tests
+{
+    [TestFixture]
+    public class PrimeService_GetNextPrimeShould
+    {
+        private PrimeService _primeService;
+
+        [SetUp]
+        public void SetUp()
+        {
+            _primeService = new PrimeService();
+        }
+
+        [Test]
+        public void GetNextPrime_InputIs1_Return2()
+        {
+            int result = _primeService.GetNextPrime(1);
+            Assert.That(result, Is.EqualTo(2));
+        }
+
+        [Test]
+        public void GetNextPrime_InputIs2_Return3()
+        {
+            int result = _primeService.GetNextPrime(2);
+            Assert.That(result, Is.EqualTo(3));
+        }
+
+        [TestCase(3, 5)]
+        [TestCase(5, 7)]
+        [TestCase(7, 11)]
+        [TestCase(11, 13)]
+        [TestCase(13, 17)]
+        [TestCase(17, 19)]
+        [TestCase(19, 23)]
+        public void GetNextPrime_InputIsKnownPrime_ReturnNextPrime(int input, int expected)
+        {
+            int result = _primeService.GetNextPrime(input);
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [TestCase(4, 5)]
+        [TestCase(6, 7)]
+        [TestCase(8, 11)]
+        [TestCase(9, 11)]
+        [TestCase(10, 11)]
+        public void GetNextPrime_InputIsComposite_ReturnNextPrime(int input, int expected)
+        {
+            int result = _primeService.GetNextPrime(input);
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [TestCase(-1)]
+        [TestCase(-5)]
+        [TestCase(0)]
+        public void GetNextPrime_InputIsNegativeOrZero_Return2(int input)
+        {
+            int result = _primeService.GetNextPrime(input);
+            Assert.That(result, Is.EqualTo(2));
+        }
+    }
+}

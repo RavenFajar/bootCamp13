@@ -1,0 +1,57 @@
+using NUnit.Framework;
+
+namespace PrimeService.Tests
+{
+    [TestFixture]
+    public class PrimeService_FindPrimesUpToShould
+    {
+        private PrimeService _primeService;
+
+        [SetUp]
+        public void SetUp()
+        {
+            _primeService = new PrimeService();
+        }
+
+        [Test]
+        public void FindPrimesUpTo_InputIs2_ReturnArray2()
+        {
+            int[] result = _primeService.FindPrimesUpTo(2);
+            int[] expected = { 2 };
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void FindPrimesUpTo_InputIs10_ReturnCorrectPrimes()
+        {
+            int[] result = _primeService.FindPrimesUpTo(10);
+            int[] expected = { 2, 3, 5, 7 };
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void FindPrimesUpTo_InputIs20_ReturnCorrectPrimes()
+        {
+            int[] result = _primeService.FindPrimesUpTo(20);
+            int[] expected = { 2, 3, 5, 7, 11, 13, 17, 19 };
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [TestCase(-1)]
+        [TestCase(-5)]
+        [TestCase(0)]
+        [TestCase(1)]
+        public void FindPrimesUpTo_InputIsInvalidRange_ReturnEmptyArray(int limit)
+        {
+            int[] result = _primeService.FindPrimesUpTo(limit);
+            Assert.That(result, Is.Empty);
+        }
+
+        [Test]
+        public void FindPrimesUpTo_InputIs100_ReturnCorrectCount()
+        {
+            int[] result = _primeService.FindPrimesUpTo(100);
+            Assert.That(result.Length, Is.EqualTo(25), "There should be 25 primes up to 100");
+        }
+    }
+}

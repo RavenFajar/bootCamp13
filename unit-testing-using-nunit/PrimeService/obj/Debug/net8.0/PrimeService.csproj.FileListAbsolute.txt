@@ -1,0 +1,12 @@
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\unit-testing-using-nunit\PrimeService\bin\Debug\net8.0\PrimeService.deps.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\unit-testing-using-nunit\PrimeService\bin\Debug\net8.0\PrimeService.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\unit-testing-using-nunit\PrimeService\bin\Debug\net8.0\PrimeService.pdb
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\unit-testing-using-nunit\PrimeService\obj\Debug\net8.0\PrimeService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\unit-testing-using-nunit\PrimeService\obj\Debug\net8.0\PrimeService.AssemblyInfoInputs.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\unit-testing-using-nunit\PrimeService\obj\Debug\net8.0\PrimeService.AssemblyInfo.cs
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\unit-testing-using-nunit\PrimeService\obj\Debug\net8.0\PrimeService.csproj.CoreCompileInputs.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\unit-testing-using-nunit\PrimeService\obj\Debug\net8.0\PrimeService.sourcelink.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\unit-testing-using-nunit\PrimeService\obj\Debug\net8.0\PrimeService.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\unit-testing-using-nunit\PrimeService\obj\Debug\net8.0\refint\PrimeService.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\unit-testing-using-nunit\PrimeService\obj\Debug\net8.0\PrimeService.pdb
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\unit-testing-using-nunit\PrimeService\obj\Debug\net8.0\ref\PrimeService.dll
