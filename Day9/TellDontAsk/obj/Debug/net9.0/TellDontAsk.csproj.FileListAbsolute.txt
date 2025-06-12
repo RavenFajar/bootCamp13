@@ -1,0 +1,15 @@
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day9\TellDontAsk\bin\Debug\net9.0\TellDontAsk.exe
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day9\TellDontAsk\bin\Debug\net9.0\TellDontAsk.deps.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day9\TellDontAsk\bin\Debug\net9.0\TellDontAsk.runtimeconfig.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day9\TellDontAsk\bin\Debug\net9.0\TellDontAsk.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day9\TellDontAsk\bin\Debug\net9.0\TellDontAsk.pdb
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day9\TellDontAsk\obj\Debug\net9.0\TellDontAsk.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day9\TellDontAsk\obj\Debug\net9.0\TellDontAsk.AssemblyInfoInputs.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day9\TellDontAsk\obj\Debug\net9.0\TellDontAsk.AssemblyInfo.cs
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day9\TellDontAsk\obj\Debug\net9.0\TellDontAsk.csproj.CoreCompileInputs.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day9\TellDontAsk\obj\Debug\net9.0\TellDontAsk.sourcelink.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day9\TellDontAsk\obj\Debug\net9.0\TellDontAsk.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day9\TellDontAsk\obj\Debug\net9.0\refint\TellDontAsk.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day9\TellDontAsk\obj\Debug\net9.0\TellDontAsk.pdb
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day9\TellDontAsk\obj\Debug\net9.0\TellDontAsk.genruntimeconfig.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day9\TellDontAsk\obj\Debug\net9.0\ref\TellDontAsk.dll
