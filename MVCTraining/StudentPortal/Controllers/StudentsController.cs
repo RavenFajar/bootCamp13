@@ -15,33 +15,48 @@ public class StudentsController : Controller
     {
         this.dbContext = dbContext;
     }
-   [HttpGet]
-   public IActionResult Add()
-   {
-      // This action method will return the Index view for the Students controller.
-      return View();
-   }
-   [HttpPost]
-   public  async Task<IActionResult> Add(AddStudentsModel model)
-   {
+
+    [HttpGet]
+    public Task<IActionResult> Add()
+    {
+        var model = new AddStudentsModel
+        {
+            Name = string.Empty,
+            Email = string.Empty,
+            PhoneNumber = string.Empty,
+            Subject = new List<Subject>
+            {
+                new Subject { Name = "Math", Description = "Mathematics subject" },
+                new Subject { Name = "Science", Description = "Science subject" },
+                new Subject { Name = "English", Description = "English subject" }
+            }
+        };
+        // var subjects = await dbContext.Subject.ToListAsync();
+        return View(model);
+    }
+    [HttpPost]
+    public async Task<IActionResult> Add(AddStudentsModel model)
+    {
+
         var student = new Student
         {
             Name = model.Name,
             Email = model.Email,
             PhoneNumber = model.PhoneNumber,
             IsActive = model.IsActive,
+
         };
         await dbContext.Students.AddAsync(student);
         await dbContext.SaveChangesAsync();
-       return RedirectToAction("List", "Students");
-   }
-   [HttpGet]
+        return RedirectToAction("List", "Students");
+    }
+    [HttpGet]
     public async Task<IActionResult> List()
     {
-         // Fetch all students from the database
-         var students = await dbContext.Students.ToListAsync();
-         // Return the Index view with the list of students
-         return View(students);
+        // Fetch all students from the database
+        var students = await dbContext.Students.ToListAsync();
+        // Return the Index view with the list of students
+        return View(students);
     }
     [HttpGet]
     public async Task<IActionResult> Edit(Guid id)
@@ -70,7 +85,9 @@ public class StudentsController : Controller
 
             // Save changes to the database
             await dbContext.SaveChangesAsync();
-        }else{
+        }
+        else
+        {
             return NotFound();
         }
         // Redirect to the List action to show updated list

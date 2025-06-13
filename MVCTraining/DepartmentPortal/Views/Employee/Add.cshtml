@@ -1,0 +1,29 @@
+@{
+}
+@model DepartmentPortal.Models.AddEmployee
+<h2>Add Employee</h2>
+
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input class="form-control" asp-for="Name"/>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Position</label>
+        <input class="form-control" asp-for="Position"/>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Hire Date</label>
+        <input class="form-control" asp-for="HireDate"/>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Salary</label>
+        <input class="form-control" asp-for="Salary"/>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Department</label>
+        <select class="form-select" asp-for="DepartmentId" asp-items="ViewBag.Departments">
+            <option value="">Select Department</option>
+        </select>
+    <button type="submit" class="btn btn-primary">Add Subject</button>
+</form>

@@ -1,0 +1,16 @@
+@{
+}
+@model DepartmentPortal.Models.AddDepartment
+<h2>Add Department</h2>
+
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input class="form-control" asp-for="Name"/>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Description</label>
+        <input class="form-control" asp-for="Location"/>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Subject</button>
+</form>

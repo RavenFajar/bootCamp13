@@ -1,0 +1,34 @@
+@{
+}
+@model List<DepartmentPortal.Models.Entities.Department>
+
+<h2>All Subject</h2>
+<a class="btn btn-success mb-3" asp-controller="Department" asp-action="Add"><Address>Add Department</Address></a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var department in Model)
+        {
+            <tr>
+                <td>@department.Id</td>
+                <td>@department.Name</td>
+                <td>@department.Location</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@department.Id" class="btn btn-primary">Edit</a>
+                    <form method="post" 
+                        asp-controller="Subject" 
+                        asp-action="Delete" 
+                        asp-route-id="@department.Id">
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                    </form>                
+                </td>
+            </tr>
+        }
