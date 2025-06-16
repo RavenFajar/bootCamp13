@@ -22,6 +22,7 @@ public class DepartmentController : Controller
     [HttpPost]
     public IActionResult Add(AddDepartment model)
     {
+        
         var department = new Department
         {
             Id = Guid.NewGuid(),
