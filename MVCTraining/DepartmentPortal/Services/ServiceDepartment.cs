@@ -3,10 +3,11 @@ using DepartmentPortal.Models.Entities;
 using DepartmentPortal.DTOs;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using DepartmentPortal.Interfaces;
 
 namespace DepartmentPortal.Services;
 
-public class ServiceDepartment 
+public class ServiceDepartment : IServiceDepartment
 {
     private readonly ApplicationDbContext _dbContext;
     private readonly IMapper _mapper;
@@ -21,6 +22,7 @@ public class ServiceDepartment
     {
         var department = _mapper.Map<Department>(departmentCreateDto);
         department.Id = Guid.NewGuid();
+
         await _dbContext.Departments.AddAsync(department);
         await _dbContext.SaveChangesAsync();
         return _mapper.Map<DepartmentDto>(department);

@@ -1,5 +1,11 @@
 using DepartmentPortal.Data;
 using Microsoft.EntityFrameworkCore;
+using DepartmentPortal.MappingProfiles;
+using DepartmentPortal.Interfaces;
+using DepartmentPortal.Services;
+{
+    
+}
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +16,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
         builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
+builder.Services.AddAutoMapper(typeof(MappingDepartment));
+builder.Services.AddAutoMapper(typeof(MappingEmployee));
+builder.Services.AddScoped<IServiceDepartment, ServiceDepartment>();
+builder.Services.AddScoped<IServiceEmployee, ServiceEmployee>();
 
 var app = builder.Build();
 

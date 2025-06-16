@@ -1,7 +1,11 @@
 @{
 }
-@model List<DepartmentPortal.Models.Entities.Department>
+@* @model List<DepartmentPortal.Models.Entities.Department> *@
 
+@model List<DepartmentPortal.DTOs.DepartmentDto>
+@{
+    ViewData["Title"] = "Department List";
+}
 <h2>All Subject</h2>
 <a class="btn btn-success mb-3" asp-controller="Department" asp-action="Add"><Address>Add Department</Address></a>
 

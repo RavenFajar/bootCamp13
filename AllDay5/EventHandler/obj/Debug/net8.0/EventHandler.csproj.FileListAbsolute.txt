@@ -13,3 +13,18 @@ C:\Users\Raven BootCamp 13\Documents\bootCamp13\EventHandler\obj\Debug\net8.0\re
 C:\Users\Raven BootCamp 13\Documents\bootCamp13\EventHandler\obj\Debug\net8.0\EventHandler.pdb
 C:\Users\Raven BootCamp 13\Documents\bootCamp13\EventHandler\obj\Debug\net8.0\EventHandler.genruntimeconfig.cache
 C:\Users\Raven BootCamp 13\Documents\bootCamp13\EventHandler\obj\Debug\net8.0\ref\EventHandler.dll
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\AllDay5\EventHandler\bin\Debug\net8.0\EventHandler.exe
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\AllDay5\EventHandler\bin\Debug\net8.0\EventHandler.deps.json
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\AllDay5\EventHandler\bin\Debug\net8.0\EventHandler.runtimeconfig.json
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\AllDay5\EventHandler\bin\Debug\net8.0\EventHandler.dll
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\AllDay5\EventHandler\bin\Debug\net8.0\EventHandler.pdb
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\AllDay5\EventHandler\obj\Debug\net8.0\EventHandler.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\AllDay5\EventHandler\obj\Debug\net8.0\EventHandler.AssemblyInfoInputs.cache
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\AllDay5\EventHandler\obj\Debug\net8.0\EventHandler.AssemblyInfo.cs
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\AllDay5\EventHandler\obj\Debug\net8.0\EventHandler.csproj.CoreCompileInputs.cache
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\AllDay5\EventHandler\obj\Debug\net8.0\EventHandler.sourcelink.json
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\AllDay5\EventHandler\obj\Debug\net8.0\EventHandler.dll
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\AllDay5\EventHandler\obj\Debug\net8.0\refint\EventHandler.dll
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\AllDay5\EventHandler\obj\Debug\net8.0\EventHandler.pdb
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\AllDay5\EventHandler\obj\Debug\net8.0\EventHandler.genruntimeconfig.cache
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\AllDay5\EventHandler\obj\Debug\net8.0\ref\EventHandler.dll
