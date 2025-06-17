@@ -5,7 +5,6 @@ using DepartmentPortal.Data;
 using DepartmentPortal.Interfaces;
 using DepartmentPortal.DTOs;
 using DepartmentPortal.Models.Entities;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace DepartmentPortal.Controllers;
@@ -38,7 +37,7 @@ public class EmployeeController : Controller
 
     [HttpPost]
     public async Task<IActionResult> Add(EmployeeCreateDto EmployeeCreateDto)
-    {   
+    {
         if (!ModelState.IsValid)
         {
             ViewBag.Departments = await _employeeService.GetDepartmentsAsSelectListAsync();
@@ -74,4 +73,15 @@ public class EmployeeController : Controller
         return View(employee);
     }
 
+    [HttpPost]
+    public async Task<IActionResult> Delete(Guid id)
+    {
+        Console.WriteLine($"Received ID: {id}");
+        var result = await _employeeService.DeleteAsync(id);
+        if (!result)
+        {
+            return NotFound("Employee not found.");
+        }
+        return RedirectToAction("List", "Employee");
+    }
 }

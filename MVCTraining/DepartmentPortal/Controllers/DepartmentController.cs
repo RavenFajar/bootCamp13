@@ -6,16 +6,19 @@ using DepartmentPortal.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 using DepartmentPortal.DTOs;
 using DepartmentPortal.Interfaces;
+using FluentValidation;
 
 namespace DepartmentPortal.Controllers;
 
 public class DepartmentController : Controller
 {
     private readonly IServiceDepartment _serviceDepartment;
+    private readonly IValidator<DepartmentCreateDto> _departmentValidator;
 
-    public DepartmentController(IServiceDepartment serviceDepartment)
+    public DepartmentController(IServiceDepartment serviceDepartment, IValidator<DepartmentCreateDto> departmentValidator)
     {
         _serviceDepartment = serviceDepartment;
+        _departmentValidator = departmentValidator;
     }
 
     [HttpGet]
@@ -28,23 +31,23 @@ public class DepartmentController : Controller
     [HttpPost]
     public async Task<IActionResult> Add(DepartmentCreateDto DepartmentCreateDto)
     {
-        if (!ModelState.IsValid)
+        try
         {
+            if (ModelState.IsValid)
+            {
+                return View(DepartmentCreateDto);
+            }
+
+            await _serviceDepartment.AddAsync(DepartmentCreateDto);
+            return RedirectToAction("List", "Department");
+
+        }
+        catch (Exception ex)
+        {
+            ModelState.AddModelError("", "Error creating student: " + ex.Message);
+
             return View(DepartmentCreateDto);
         }
-        var departmentDto = await _serviceDepartment.AddAsync(DepartmentCreateDto);
-        return RedirectToAction("List", "Department");
-        
-        // var department = new Department
-        // {
-        //     Id = Guid.NewGuid(),
-        //     Name = model.Name,
-        //     Location = model.Location
-        // };
-        // _dbContext.Departments.AddAsync(department);
-        // _dbContext.SaveChanges();
-        // return RedirectToAction("List", "Department");
-
     }
     [HttpGet]
     public async Task<IActionResult> List()
@@ -55,31 +58,65 @@ public class DepartmentController : Controller
             return NotFound("No departments found.");
         }
         return View(departments);
-
-        // var departments = await _dbContext.Departments.ToListAsync();
-        // if (departments == null)
-        // {
-        //     return NotFound("No departments found.");
-        // }
-        // return View(departments);
     }
+
     [HttpPost]
-    public async Task<IActionResult> DeleteDepartment(Guid id)
+    public async Task<IActionResult> Delete(Guid id)
     {
+        Console.WriteLine($"Received ID: {id}");
         var result = await _serviceDepartment.DeleteAsync(id);
         if (!result)
         {
             return NotFound("Department not found.");
         }
         return RedirectToAction("List", "Department");
-
-        // var department = await _dbContext.Departments.FindAsync(id);
-        // if (department == null)
-        // {
-        //     return NotFound("Department not found.");
-        // }
-        // _dbContext.Departments.Remove(department);
-        // await _dbContext.SaveChangesAsync();
-        // return RedirectToAction("List", "Department");
     }
+
+    [HttpGet]
+    public async Task<IActionResult> Detail(Guid id)
+    {
+        var result = await _serviceDepartment.GetDepartmentByIdAsync(id);
+        if (result == null)
+        {
+            return NotFound("Department not found.");
+        }
+        return View(result);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Edit(Guid id)
+    {
+        var result = await _serviceDepartment.GetDepartmentByIdAsync(id);
+        if (result == null)
+        {
+            return NotFound("Department not found.");
+        }
+        return View(result);
+    }
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(DepartmentDto departmentDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(departmentDto);
+            }
+
+            try
+            {
+                var updatedDepartment = await _serviceDepartment.UpdateAsync(departmentDto);
+                if (updatedDepartment == null)
+                {
+                    return NotFound("Department not found.");
+                }
+
+                TempData["Success"] = "Department updated successfully!";
+                return RedirectToAction("List");
+            }
+            catch
+            {
+                ModelState.AddModelError("", "An error occurred while updating the department.");
+                return View(departmentDto);
+            }
+        }
 }

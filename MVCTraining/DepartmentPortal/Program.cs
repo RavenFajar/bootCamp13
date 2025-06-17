@@ -1,11 +1,15 @@
 using DepartmentPortal.Data;
 using Microsoft.EntityFrameworkCore;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using DepartmentPortal.MappingProfiles;
 using DepartmentPortal.Interfaces;
 using DepartmentPortal.Services;
-{
-    
-}
+using DepartmentPortal.Models.Entities;
+using DepartmentPortal.Validators;
+using DepartmentPortal.Repositories;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,11 +19,19 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(
         builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// Registrasi repository dan service
+builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+builder.Services.AddScoped<IServiceDepartment, ServiceDepartment>();
+
+
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddAutoMapper(typeof(MappingDepartment));
 builder.Services.AddAutoMapper(typeof(MappingEmployee));
 builder.Services.AddScoped<IServiceDepartment, ServiceDepartment>();
 builder.Services.AddScoped<IServiceEmployee, ServiceEmployee>();
+
+// Configure FluentValidation
+ConfigureFluentValidation(builder.Services);
 
 var app = builder.Build();
 
@@ -45,3 +57,26 @@ app.MapControllerRoute(
 
 
 app.Run();
+
+static void ConfigureFluentValidation(IServiceCollection services)
+{
+    // Add FluentValidation services
+    services.AddFluentValidationAutoValidation(options =>
+    {
+        // Disable automatic validation for properties with [BindNever] attribute
+        options.DisableDataAnnotationsValidation = false;
+        
+        // Configure implicit validation for child properties
+        // options.ImplicitlyValidateChildProperties = true;
+    });
+
+    // Add client-side validation adapters for better user experience
+    services.AddFluentValidationClientsideAdapters();
+
+    // Register all validators from the current assembly
+    services.AddValidatorsFromAssemblyContaining<DepartmentValidator>();
+
+    // Alternative: Register validators individually for more control
+    // services.AddScoped<IValidator<Student>, StudentValidator>();
+    // services.AddScoped<IValidator<Grade>, GradeValidator>();
+}
