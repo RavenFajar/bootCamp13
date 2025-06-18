@@ -1,0 +1,15 @@
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day10\TanpaAbstractFactory\bin\Debug\net9.0\TanpaAbstractFactory.exe
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day10\TanpaAbstractFactory\bin\Debug\net9.0\TanpaAbstractFactory.deps.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day10\TanpaAbstractFactory\bin\Debug\net9.0\TanpaAbstractFactory.runtimeconfig.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day10\TanpaAbstractFactory\bin\Debug\net9.0\TanpaAbstractFactory.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day10\TanpaAbstractFactory\bin\Debug\net9.0\TanpaAbstractFactory.pdb
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day10\TanpaAbstractFactory\obj\Debug\net9.0\TanpaAbstractFactory.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day10\TanpaAbstractFactory\obj\Debug\net9.0\TanpaAbstractFactory.AssemblyInfoInputs.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day10\TanpaAbstractFactory\obj\Debug\net9.0\TanpaAbstractFactory.AssemblyInfo.cs
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day10\TanpaAbstractFactory\obj\Debug\net9.0\TanpaAbstractFactory.csproj.CoreCompileInputs.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day10\TanpaAbstractFactory\obj\Debug\net9.0\TanpaAbstractFactory.sourcelink.json
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day10\TanpaAbstractFactory\obj\Debug\net9.0\TanpaAbstractFactory.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day10\TanpaAbstractFactory\obj\Debug\net9.0\refint\TanpaAbstractFactory.dll
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day10\TanpaAbstractFactory\obj\Debug\net9.0\TanpaAbstractFactory.pdb
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day10\TanpaAbstractFactory\obj\Debug\net9.0\TanpaAbstractFactory.genruntimeconfig.cache
+C:\Users\Raven BootCamp 13\Documents\bootCamp13\Day10\TanpaAbstractFactory\obj\Debug\net9.0\ref\TanpaAbstractFactory.dll

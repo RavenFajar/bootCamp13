@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "roov2E/q4qc=",
+  "dgSpecHash": "rLWwT20+Dnk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Raven Fajar\\Documents\\FormulatrixBootCamp\\bootCamp13\\Day8\\OCamera\\OCamera.csproj",
+  "projectFilePath": "C:\\Users\\Raven BootCamp 13\\Documents\\bootCamp13\\Day8\\OCamera\\OCamera.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Raven Fajar\\.nuget\\packages\\opencvsharp4\\4.11.0.20250507\\opencvsharp4.4.11.0.20250507.nupkg.sha512",
-    "C:\\Users\\Raven Fajar\\.nuget\\packages\\opencvsharp4.runtime.win\\4.11.0.20250507\\opencvsharp4.runtime.win.4.11.0.20250507.nupkg.sha512",
-    "C:\\Users\\Raven Fajar\\.nuget\\packages\\opencvsharp4.windows\\4.11.0.20250507\\opencvsharp4.windows.4.11.0.20250507.nupkg.sha512",
-    "C:\\Users\\Raven Fajar\\.nuget\\packages\\system.memory\\4.6.3\\system.memory.4.6.3.nupkg.sha512"
+    "C:\\Users\\Raven BootCamp 13\\.nuget\\packages\\opencvsharp4\\4.11.0.20250507\\opencvsharp4.4.11.0.20250507.nupkg.sha512",
+    "C:\\Users\\Raven BootCamp 13\\.nuget\\packages\\opencvsharp4.runtime.win\\4.11.0.20250507\\opencvsharp4.runtime.win.4.11.0.20250507.nupkg.sha512",
+    "C:\\Users\\Raven BootCamp 13\\.nuget\\packages\\opencvsharp4.windows\\4.11.0.20250507\\opencvsharp4.windows.4.11.0.20250507.nupkg.sha512",
+    "C:\\Users\\Raven BootCamp 13\\.nuget\\packages\\system.memory\\4.6.3\\system.memory.4.6.3.nupkg.sha512"
   ],
   "logs": []
 }
