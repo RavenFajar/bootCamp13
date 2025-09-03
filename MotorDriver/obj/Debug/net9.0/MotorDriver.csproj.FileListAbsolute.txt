@@ -1,0 +1,15 @@
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\MotorDriver\bin\Debug\net9.0\MotorDriver.exe
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\MotorDriver\bin\Debug\net9.0\MotorDriver.deps.json
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\MotorDriver\bin\Debug\net9.0\MotorDriver.runtimeconfig.json
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\MotorDriver\bin\Debug\net9.0\MotorDriver.dll
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\MotorDriver\bin\Debug\net9.0\MotorDriver.pdb
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\MotorDriver\obj\Debug\net9.0\MotorDriver.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\MotorDriver\obj\Debug\net9.0\MotorDriver.AssemblyInfoInputs.cache
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\MotorDriver\obj\Debug\net9.0\MotorDriver.AssemblyInfo.cs
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\MotorDriver\obj\Debug\net9.0\MotorDriver.csproj.CoreCompileInputs.cache
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\MotorDriver\obj\Debug\net9.0\MotorDriver.sourcelink.json
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\MotorDriver\obj\Debug\net9.0\MotorDriver.dll
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\MotorDriver\obj\Debug\net9.0\refint\MotorDriver.dll
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\MotorDriver\obj\Debug\net9.0\MotorDriver.pdb
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\MotorDriver\obj\Debug\net9.0\MotorDriver.genruntimeconfig.cache
+C:\Users\Raven Fajar\Documents\FormulatrixBootCamp\bootCamp13\MotorDriver\obj\Debug\net9.0\ref\MotorDriver.dll

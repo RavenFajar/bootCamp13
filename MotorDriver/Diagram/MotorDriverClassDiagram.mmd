@@ -1,0 +1,53 @@
+classDiagram
+    IMotor ..|> MotorA : realization
+    IMotor ..|> MotorB : realization
+    MotorA --* DriverMotorA : composition
+    MotorB --* DriverMotorB : composition
+    MotorFactory ..> IMotor : returns
+    MotorFactory ..> MotorKind : dependency
+    Motor o-- IMotor : aggregation
+    MotorGrouping o-- IMotor : aggregation
+
+    class DriverMotorA{
+        +Start(int rpm) : void
+        +Stop() : void
+    }
+    class DriverMotorB{
+        +Move(int degree, int rpm) : void
+    }
+    class MotorA{
+        -DriverMotorA _motorA
+        +MotorA(DriverMotorA motorA)
+        +MoveAsync(int degree, int rpm) : Task
+        +SimulatedRunWithDegree(int degree, int rpm) : Task
+        +SimulatedRunWithTime(int degree, int rpm) : Task
+        +TimerDelay(Stopwatch stopwatch, TimeSpan totalTime, int degree) : Task
+        +EndTime(Stopwatch stopwatch, TimeSpan totalTime, int degree) : Task
+    }
+    class MotorB{
+        -DriverMotorB _motorB
+        +MotorB(DriverMotorB motorB)
+        +MoveAsync(int degree, int rpm) : Task
+    }
+    class IMotor{
+        <<interface>>
+        +MoveAsync(int degree, int rpm) : Task
+    }
+    class Motor {
+        -IMotor _iMotor
+        +Motor(IMotor iMotor)
+        +MoveAsync(degree, rpm) : Task
+    }
+    class MotorKind{
+    <<enumeration>>
+        MotorA
+        MotorB
+    }
+    class MotorFactory{
+        +GetMotor(MotorKind motorKind) : IMotor
+    }
+    class MotorGrouping{
+        -List~IMotor~ _motors
+        +MotorGrouping(motors: IMotor[])
+        +MoveAllAsync(int degree, int rpm) : Task
+    }

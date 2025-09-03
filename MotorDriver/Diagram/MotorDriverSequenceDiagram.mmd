@@ -1,0 +1,45 @@
+sequenceDiagram
+    participant Client
+    participant MotorFactory
+    participant MotorGrouping
+    participant Motor
+    participant MotorA
+    participant MotorB
+    participant DriverMotorA
+    participant DriverMotorB
+
+    Client ->>+ MotorFactory: GetMotor(MotorKind.MotorA)
+    MotorFactory ->> MotorA: new MotorA()
+    MotorFactory -->>- Client: MotorA instance
+    Client ->>+ MotorFactory: GetMotor(MotorKind.MotorB)
+    MotorFactory ->>+ MotorB: new MotorB()
+    MotorFactory -->>- Client: MotorB instance
+
+    Client ->>+ MotorGrouping: MotorGrouping(MotorA, MotorB)
+    MotorGrouping ->>- Client: MotorGrouping instance
+    Client --) MotorGrouping: MoveAllAsync(180, 10)
+    MotorGrouping --) Motor: MoveAsync(180, 10)
+
+    Motor --) MotorA: MoveAsync(180, 10)
+    Motor --) MotorB: MoveAsync(180, 10)
+
+    MotorA ->>+ DriverMotorA: DriverMotorA.Start(10)
+    MotorB ->>+ DriverMotorB: DriverMotorB.Move(180, 10)
+
+    DriverMotorA ->>+ Client: Use Motor From Company A
+    DriverMotorB ->>+ Client: Use Motor From Company B
+
+    DriverMotorA ->>+ Client: Motor A State change to On with 10 rpm
+    MotorB --) Client: Log: "Motor B start moving in Time: 02:47:51.597"
+    
+    MotorA --) Client: Log: "Motor A Moved 0 degree / 180 degree in time: 02:47:51.597"
+    MotorA --) Client: Log: "Motor A Moved 62 degree / 180 degree in time: 02:47:52.635"
+    MotorA --) Client: Log: "Motor A Moved 180 degree / 180 degree in time: 02:47:54.605"
+   
+    MotorA ->> DriverMotorA: DriverMotorA.Stop()
+    DriverMotorA ->>- Client: Motor A State change to Off
+    MotorA ->> Client: Log: "Motor A moved in Time: 02:47:54.607"
+
+    DriverMotorB ->>- Client: Motor Moved 180 degree with 10 rpm
+    MotorB --) Client: Log: "Motor B moved in Time: 02:47:54.642"
+
