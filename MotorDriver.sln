@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotorDriver", "MotorDriver\MotorDriver.csproj", "{D362DA1A-B916-4CCB-99D1-185A1C1ADCDC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheStore", "CacheStore\CacheStore.csproj", "{1BBB66CA-EDBA-45A2-AB20-D7FC2F63EF18}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,18 @@ Global
 		{D362DA1A-B916-4CCB-99D1-185A1C1ADCDC}.Release|x64.Build.0 = Release|Any CPU
 		{D362DA1A-B916-4CCB-99D1-185A1C1ADCDC}.Release|x86.ActiveCfg = Release|Any CPU
 		{D362DA1A-B916-4CCB-99D1-185A1C1ADCDC}.Release|x86.Build.0 = Release|Any CPU
+		{1BBB66CA-EDBA-45A2-AB20-D7FC2F63EF18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BBB66CA-EDBA-45A2-AB20-D7FC2F63EF18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BBB66CA-EDBA-45A2-AB20-D7FC2F63EF18}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1BBB66CA-EDBA-45A2-AB20-D7FC2F63EF18}.Debug|x64.Build.0 = Debug|Any CPU
+		{1BBB66CA-EDBA-45A2-AB20-D7FC2F63EF18}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1BBB66CA-EDBA-45A2-AB20-D7FC2F63EF18}.Debug|x86.Build.0 = Debug|Any CPU
+		{1BBB66CA-EDBA-45A2-AB20-D7FC2F63EF18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BBB66CA-EDBA-45A2-AB20-D7FC2F63EF18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BBB66CA-EDBA-45A2-AB20-D7FC2F63EF18}.Release|x64.ActiveCfg = Release|Any CPU
+		{1BBB66CA-EDBA-45A2-AB20-D7FC2F63EF18}.Release|x64.Build.0 = Release|Any CPU
+		{1BBB66CA-EDBA-45A2-AB20-D7FC2F63EF18}.Release|x86.ActiveCfg = Release|Any CPU
+		{1BBB66CA-EDBA-45A2-AB20-D7FC2F63EF18}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
